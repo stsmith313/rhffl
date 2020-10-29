@@ -513,6 +513,12 @@ section {
     }
 }
 
+@media only screen and (min-width: 1024px) {
+    .left-side-champ {
+        width: 100%
+    }
+}
+
 .right-side {
     background: #F8F8F8;
     padding: 1rem;
@@ -1087,7 +1093,7 @@ table tbody tr td:nth-child(2) {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 55%;
+    width: 60%;
     text-align: center;
     color: #FDFDFD
 }
@@ -1106,7 +1112,7 @@ table tbody tr td:nth-child(2) {
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    align-items: left;
     width: 100%;
     background: #FDFDFD;
     border-bottom: 1px solid #2F162C
@@ -1126,7 +1132,7 @@ table tbody tr td:nth-child(2) {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 55%;
+    width: 75%;
     text-align: center
 }
 
@@ -1161,11 +1167,11 @@ table tbody tr td:nth-child(2) {
 }
 
 .roster-table .row .column:nth-child(2) {
-    width: 20%
+    width: 50%
 }
 
 .roster-table .row .column:last-child {
-    width: 25%
+    width: 50%
 }
 
 .top-score {
