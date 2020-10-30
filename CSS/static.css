@@ -840,7 +840,7 @@ section {
     }
 
     .post-mini img {
-        height: auto;
+        height: 73vh;
         width: 105%;
         position: absolute;
         top: 50%;
