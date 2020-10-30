@@ -833,6 +833,65 @@ section {
     opacity: .1
 }
 
+.power-mini {
+    border-radius: 15px;
+    background: linear-gradient(45deg, #ed4541, rgba(47, 22, 44, 0.6));
+    -webkit-box-shadow: 0 10px 7px 0px rgba(142, 142, 142, 0.16);
+    box-shadow: 0 10px 7px 0px rgba(142, 142, 142, 0.16);
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    color: #151515;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -webkit-transition-property: -webkit-box-shadow, -webkit-transform;
+    transition-property: -webkit-box-shadow, -webkit-transform;
+    transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform, -webkit-box-shadow, -webkit-transform;
+    -webkit-transition-timing-function: line;
+    transition-timing-function: line;
+    position: relative;
+    margin-bottom: 1rem
+}
+
+.power-mini img {
+    opacity: .6;
+    margin-bottom: -5px;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+}
+
+.power-mini .post-detail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #FDFDFD
+}
+
+.power-mini .post-detail h3 {
+    margin-bottom: 0
+}
+
+.power-mini:hover,
+.power-mini:active,
+.power-mini:focus {
+    -webkit-box-shadow: #2F162C -1px 1px, #2F162C -2px 2px, #2F162C -3px 3px, #2F162C -4px 4px, #2F162C -5px 5px, #2F162C -6px 6px;
+    box-shadow: #2F162C -1px 1px, #2F162C -2px 2px, #2F162C -3px 3px, #2F162C -4px 4px, #2F162C -5px 5px, #2F162C -6px 6px;
+    -webkit-transform: translate3d(6px, -6px, 0);
+    transform: translate3d(6px, -6px, 0)
+}
+
+.power-mini:hover>img,
+.power-mini:active>img,
+.power-mini:focus>img {
+    opacity: .1
+}
+
 @media only screen and (min-width: 1024px) {
     .post-mini {
         height: calc(100% - .5rem);
@@ -840,6 +899,21 @@ section {
     }
 
     .post-mini img {
+        height: auto;
+        width: 105%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
+    }
+
+    .power-mini {
+        height: calc(100% - .5rem);
+        width: calc(100% - .5rem);
+    }
+
+    .power-mini img {
         height: 100%;
         width: 105%;
         position: absolute;
