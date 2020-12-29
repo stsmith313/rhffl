@@ -1,18 +1,20 @@
-
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-61MEL628L5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-61MEL628L5');
-</script>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-61MEL628L5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-61MEL628L5');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,46 +40,32 @@
 
     <title>RHFL | Team Skully</title>
 
-    </head>
-    <body>
+</head>
 
-        <div class="preload-wrapper">
-            <div id="preload"></div>
-        </div>
+<body>
 
-        <div class="content">
+    <div class="preload-wrapper">
+        <div id="preload"></div>
+    </div>
 
-            <div class='nav'>
-                <div class="top">
-                    <a href="../index"><img src="../Logos/trophy.svg" class='nav-logo' alt="RHFL Main Logo"></a>
-    
-                    <div id="menu-toggle">
-                        <div id="hamburger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div id="cross">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-    
-                    <ul>
-                        <li><a href="../index">Home</a></li>
-                        <li><a href="../hall-of-champions">Hall of Champions</a></li>
-                        <!--<li><a href="../drafts">Drafts</a></li>-->
-                        <li><a href="../teams">Teams</a></li>
-                        <li><a href="../power-rankings">Power Rankings</a></li>
-                        <li><a href="../records">Records</a></li>
-                    </ul>
-    
-                </div>
-            </div>
-    
-    
-            <div class="mobile-nav">
+    <div class="content">
+
+        <div class='nav'>
+            <div class="top">
                 <a href="../index"><img src="../Logos/trophy.svg" class='nav-logo' alt="RHFL Main Logo"></a>
+
+                <div id="menu-toggle">
+                    <div id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div id="cross">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
                 <ul>
                     <li><a href="../index">Home</a></li>
                     <li><a href="../hall-of-champions">Hall of Champions</a></li>
@@ -86,126 +74,173 @@
                     <li><a href="../power-rankings">Power Rankings</a></li>
                     <li><a href="../records">Records</a></li>
                 </ul>
-            </div>
 
-
-            
-
-    <div class="team-header">
-        <div class="detail">
-            <div class="about">
-                <img src="../Logos/skully.png" alt="Team Skully" class="team-logo">
-                <div class="name">
-                    <h2>Team Skully</h2>
-                    <p>Skully Thomas</p>
-                </div>
-            </div>
-            <div class="stats">
-                <div class="card">
-                    <small>Record</small>
-                    <h2>4 - 9</h2>
-                </div>
-                <div class="card">
-                    <small>Win %</small>
-                    <h2>30.8%</h2>
-                </div>
-                <div class="card">
-                    <small>Points</small>
-                    <h2>1,581.7</h2>
-                </div>
-                <div class="card">
-                    <small>Standing</small>
-                    <h2>13</h2>
-                </div>
             </div>
         </div>
 
-    </div>
-    
-    <h2>Career Highs</h2>
-    <div class="flex">
-        <div class="record-card">
-            <p>Most Wins in a Season</p>
-            <h1>11</h1>
+
+        <div class="mobile-nav">
+            <a href="../index"><img src="../Logos/trophy.svg" class='nav-logo' alt="RHFL Main Logo"></a>
+            <ul>
+                <li><a href="../index">Home</a></li>
+                <li><a href="../hall-of-champions">Hall of Champions</a></li>
+                <!--<li><a href="../drafts">Drafts</a></li>-->
+                <li><a href="../teams">Teams</a></li>
+                <li><a href="../power-rankings">Power Rankings</a></li>
+                <li><a href="../records">Records</a></li>
+            </ul>
         </div>
-        <div class="record-card">
-            <p>Most Points in a Game</p>
-            <h1>180.9</h1>
-        </div>
-        <div class="record-card">
-            <p>Most Points in a Season</p>
-            <h1>1,635.9</h1>
-        </div>
-        <div class="record-card">
-            <p>Highest OPR</p>
-            <h1>1.178</h1>
-        </div>
-        <div class="record-card">
-            <p>Highest Finish</p>
-            <h1>2</h1>
-        </div>
-        <div class="record-card">
-            <p>Most Moves in a Season</p>
-            <h1>67</h1>
-        </div>
-    </div>
 
 
-    <section>
 
-        <div class="left-side">
-            <h2>Yearly Performance</h2>
-            <canvas id="myChart"></canvas>
-            <script>
-                var ctx = document.getElementById("myChart").getContext('2d');
-                var myChart = new Chart(ctx, {
-                    // The type of chart we want to create
-                    type: 'line',
-                    // The data for our dataset
-                    data: {
-                        labels: [2017, 2018, 2019, 2020],
-                        datasets: [{
-                            label: 'Wins',
-                            borderColor: 'rgb(47, 22, 44)',
-                            data: [6, 6, 11, 4]
-                        }]
-                    },
-        
-                    // Configuration options go here
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                suggestedMin: 0,
-                                suggestedMax: 13
-                                }
+
+        <div class="team-header">
+            <div class="detail">
+                <div class="about">
+                    <img src="../Logos/skully.png" alt="Team Skully" class="team-logo">
+                    <div class="name">
+                        <h2>Team Skully</h2>
+                        <p>Skully Thomas</p>
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="card">
+                        <small>Record</small>
+                        <h2>4 - 9</h2>
+                    </div>
+                    <div class="card">
+                        <small>Win %</small>
+                        <h2>30.8%</h2>
+                    </div>
+                    <div class="card">
+                        <small>Points</small>
+                        <h2>1,581.7</h2>
+                    </div>
+                    <div class="card">
+                        <small>Standing</small>
+                        <h2>13</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>Career Highs</h2>
+        <div class="flex">
+            <div class="record-card">
+                <p>Most Wins in a Season</p>
+                <h1>11</h1>
+            </div>
+            <div class="record-card">
+                <p>Most Points in a Game</p>
+                <h1>180.9</h1>
+            </div>
+            <div class="record-card">
+                <p>Most Points in a Season</p>
+                <h1>1,635.9</h1>
+            </div>
+            <div class="record-card">
+                <p>Highest OPR</p>
+                <h1>1.178</h1>
+            </div>
+            <div class="record-card">
+                <p>Highest Finish</p>
+                <h1>2</h1>
+            </div>
+            <div class="record-card">
+                <p>Most Moves in a Season</p>
+                <h1>67</h1>
+            </div>
+        </div>
+
+
+        <section>
+
+            <div class="left-side">
+                <h2>Yearly Performance</h2>
+                <canvas id="myChart"></canvas>
+                <script>
+                    var ctx = document.getElementById("myChart").getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        // The type of chart we want to create
+                        type: 'line',
+                        // The data for our dataset
+                        data: {
+                            labels: [2017, 2018, 2019, 2020],
+                            datasets: [{
+                                label: 'Wins',
+                                borderColor: 'rgb(47, 22, 44)',
+                                data: [6, 6, 11, 4]
                             }]
-                        }
-                    }
-                });
-            </script> 
+                        },
 
-            <div class='roster-section'>
-                <h2>Current Records</h2>
-                <div class="table-container">
-    
-                    <div class="roster-table">
-                        <div class="header-row">
-                            <div class="column">
-                                <span>Category</span>
+                        // Configuration options go here
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        suggestedMin: 0,
+                                        suggestedMax: 13
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+
+                <div class='roster-section'>
+                    <h2>Current Records</h2>
+                    <div class="table-container">
+
+                        <div class="roster-table">
+                            <div class="header-row">
+                                <div class="column">
+                                    <span>Category</span>
+                                </div>
+                                <div class="column">
+                                    <span>Record</span>
+                                </div>
+                                <div class="column">
+                                    <span>Year</span>
+                                </div>
                             </div>
-                            <div class="column">
-                                <span>Record</span>
-                            </div>
-                            <div class="column">
-                                <span>Year</span>
-                            </div>
-                        </div>
-                        
+
                             <div class="row">
                                 <div class="column" id='player-column'>
-                                
-                                    
+
+
+                                    <div class="player-detail">
+                                        <p>Largest Margin of Defeat, Single Week </p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <span>135.0</span>
+                                </div>
+                                <div class="column">
+                                    <span>Week 7, 2020</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column" id='player-column'>
+
+
+                                    <div class="player-detail">
+                                        <p>Hardest Strength of Schedule </p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <span>1,793.9 (138.0)</span>
+                                </div>
+                                <div class="column">
+                                    <span>2020</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column" id='player-column'>
+
+
                                     <div class="player-detail">
                                         <p>Most Points Over Playoffs (Avg.) </p>
                                     </div>
@@ -217,28 +252,28 @@
                                     <span>2019</span>
                                 </div>
                             </div>
-                            
-    
+
+
+                        </div>
+
                     </div>
-    
                 </div>
+
             </div>
 
-        </div>
+            <div class="right-side">
 
-        <div class="right-side">
+                <div class="prestige">
+                    <p>Prestige</p>
+                    <h1>1.020</h1>
+                </div>
 
-            <div class="prestige">
-                <p>Prestige</p>
-                <h1>1.020</h1>
-            </div>
+                <div class="team-stat-card">
+                    <h2>Career Stats</h2>
+                    <div class="table-container">
 
-            <div class="team-stat-card">
-                <h2>Career Stats</h2>
-                <div class="table-container">
-        
-                    <div class="two-col">
-        
+                        <div class="two-col">
+
                             <div class="row">
                                 <div class="column">
                                     <span>Wins</span>
@@ -247,7 +282,7 @@
                                     <span>27</span>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="column">
                                     <span>Win Percentage</span>
@@ -256,7 +291,7 @@
                                     <span>49.1%</span>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="column">
                                     <span>Points</span>
@@ -265,7 +300,7 @@
                                     <span>6,197.1</span>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="column">
                                     <span>Points Average</span>
@@ -274,18 +309,18 @@
                                     <span>119.2</span>
                                 </div>
                             </div>
-        
+
+                        </div>
+
                     </div>
-        
                 </div>
-            </div>
-        
-            <div class="team-stat-card">
-                <h2>Playoff Stats</h2>
-                <div class="table-container">
-        
-                    <div class="two-col">
-        
+
+                <div class="team-stat-card">
+                    <h2>Playoff Stats</h2>
+                    <div class="table-container">
+
+                        <div class="two-col">
+
                             <div class="row">
                                 <div class="column">
                                     <span>Record</span>
@@ -294,7 +329,7 @@
                                     <span>2-1</span>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="column">
                                     <span>Win Percentage</span>
@@ -303,7 +338,7 @@
                                     <span>66.7%</span>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="column">
                                     <span>Playoff Byes</span>
@@ -312,7 +347,7 @@
                                     <span>0</span>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="column">
                                     <span>Points</span>
@@ -321,7 +356,7 @@
                                     <span>481.2</span>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="column">
                                     <span>Points Average</span>
@@ -330,7 +365,7 @@
                                     <span>160.4</span>
                                 </div>
                             </div>
-        
+
                             <div class="row">
                                 <div class="column">
                                     <span>Championship Record</span>
@@ -339,32 +374,34 @@
                                     <span>0-1</span>
                                 </div>
                             </div>
-        
+
+                        </div>
+
                     </div>
-        
                 </div>
+
             </div>
 
-        </div>
-
-    </section>
-
-    
+        </section>
 
 
 
 
-        
 
-            <footer class="mt-3">
-            </footer>
-        </div>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.js" type="text/javascript"></script>
-        <script src="../JS/static.js"></script>
-    </body>
+
+
+
+        <footer class="mt-3">
+        </footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.js" type="text/javascript"></script>
+    <script src="../JS/static.js"></script>
+</body>
+
 </html>
