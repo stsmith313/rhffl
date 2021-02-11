@@ -26,6 +26,22 @@ html {
     line-height: calc(5.4rem + 0.35vw)
 }
 
+#demo {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: #013369;
+    line-height: 3rem;
+  }
+
+  #dem {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: #d50a0a;
+    line-height: 3.5rem;
+  }
+
 @media only screen and (min-width: 768px) {
     .title {
         font-size: calc(6rem + 0.35vw);
@@ -2019,6 +2035,33 @@ table tbody tr td:nth-child(2) {
     width: 23%;
     margin-right: 1rem
 }
+
+.timer {
+    width: 96.5%;
+    margin: 0 20px 40px 20px;
+    position: relative;
+    background: #f9fafb;
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    min-height: 204px;
+    border-radius: 15px;
+  }
+
+  .timer:hover {
+    -webkit-box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .timer .timerBody {
+    padding: 10px;
+    border-radius: 15px;
+  }
 
 @media only screen and (min-width: 768px) {
     .record-container:nth-child(odd) {

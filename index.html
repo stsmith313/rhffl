@@ -4,14 +4,17 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-61MEL628L5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-61MEL628L5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-61MEL628L5');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-61MEL628L5');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,7 +94,8 @@
 
 
         <div class="header">
-            <a href="https://open.spotify.com/show/4R9BBmHVrT082pS7pJHObS?si=wSw2Ib6xSDy2gumW4Syt7w" class="header-post">
+            <a href="https://open.spotify.com/show/4R9BBmHVrT082pS7pJHObS?si=wSw2Ib6xSDy2gumW4Syt7w"
+                class="header-post">
                 <div class="img-container">
                     <img src="Images/PodcastLogo.png"
                         srcset="Images/PodcastLogo.png 2500w,Images/PodcastLogo.png 1250w,Images/PodcastLogo.png 625w"
@@ -109,7 +113,8 @@
 
 
 
-                <a href="https://docs.google.com/spreadsheets/d/10vYhURDv_cc1ovJypjiZHTzWHyTvX-1eQdcQy-BvZvM/edit#gid=1147518213" target="_blank" class="post-mini">
+                <a href="https://docs.google.com/spreadsheets/d/10vYhURDv_cc1ovJypjiZHTzWHyTvX-1eQdcQy-BvZvM/edit#gid=1147518213"
+                    target="_blank" class="post-mini">
                     <img src="Images/wentz.jpg"
                         srcset="Images/wentz.jpg 2500w, Images/wentz.jpg 1250w, Images/wentz.jpg 625w"
                         alt="2020 Draft Results">
@@ -133,10 +138,76 @@
                     </div>
                 </a>
 
-
-
-
             </div>
+
+        </br>
+
+                <!-- Display the countdown timer in an element -->
+                <div class="timer">
+        <div class="timerBody"></div>
+          <p id="dem">Countdown to NFL Draft!</p>
+          <p id="demo"></p>
+        </div>
+      </div>
+      <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Apr 29, 2021 20:00:00").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+          // Get today's date and time
+          var now = new Date().getTime();
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          // Display the result in the element with id="demo"
+          document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+            minutes + "m " + seconds + "s ";
+          // If the count down is finished, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "Let's Draft!";
+          }
+        }, 1000);
+      </script>
+
+      <!-- Display the countdown timer in an element -->
+      <!--<div class="timer">
+        <div class="timerBody">
+          <p id="dem">Countdown to Draft!</p>
+          <p id="demo2"></p>
+        </div>
+      </div>
+      <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Sep 6, 2021 20:00:00").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+          // Get today's date and time
+          var now = new Date().getTime();
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          // Display the result in the element with id="demo"
+          document.getElementById("demo2").innerHTML = days + "d " + hours + "h " +
+            minutes + "m " + seconds + "s ";
+          // If the count down is finished, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo2").innerHTML = "Let's Draft!";
+          }
+        }, 1000);
+      </script>-->
+
+
+            
         </div>
 
         <section>
