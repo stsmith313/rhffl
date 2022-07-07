@@ -719,7 +719,7 @@ section {
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
-        height: 285px;
+        height: 415px;
         grid-template-columns: repeat(4, 1fr);
     }
 
@@ -1557,7 +1557,7 @@ table tbody tr td:nth-child(2) {
 
 @media only screen and (min-width: 768px) {
     .team {
-        height: 200px;
+        height: 250px;
         width: calc(50% - .5rem)
     }
 
