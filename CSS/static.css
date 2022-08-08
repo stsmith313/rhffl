@@ -2038,7 +2038,8 @@ table tbody tr td:nth-child(2) {
 
 .timer {
     width: 96.5%;
-    margin: 0 20px 40px 20px;
+    margin: 0 20px 10px 20px;
+    padding-bottom: 5px;
     position: relative;
     background: #f9fafb;
     -webkit-box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
