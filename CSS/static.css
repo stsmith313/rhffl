@@ -719,7 +719,7 @@ section {
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
-        height: 255px;
+        height: 330px;
         grid-template-columns: repeat(4, 1fr);
     }
 
