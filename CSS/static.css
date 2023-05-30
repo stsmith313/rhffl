@@ -1379,8 +1379,8 @@ table tbody tr td:nth-child(2) {
     align-items: center;
     padding: 1rem;
     border-radius: 15px;
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(253, 253, 253, 0)), to(#151515)), url("../Images/bosa.jpg") !important;
-    background-image: linear-gradient(left, rgba(253, 253, 253, 0), #151515), url("../Images/bosa.jpg") !important;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(253, 253, 253, 0)), to(#151515)), url("../Images/chase.jpg") !important;
+    background-image: linear-gradient(left, rgba(253, 253, 253, 0), #151515), url("../Images/chase.jpg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center
@@ -1624,8 +1624,8 @@ table tbody tr td:nth-child(2) {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-image: -webkit-gradient(linear, left top, right top, from(#fdfdfd), to(rgba(248, 248, 248, 0.8))), url("../Images/bosa.jpg") !important;
-    background-image: linear-gradient(90deg, #fdfdfd, rgba(248, 248, 248, 0.8)), url("../Images/bosa.jpg") !important;
+    background-image: -webkit-gradient(linear, left top, right top, from(#fdfdfd), to(rgba(248, 248, 248, 0.8))), url("../Images/chase.jpg") !important;
+    background-image: linear-gradient(90deg, #fdfdfd, rgba(248, 248, 248, 0.8)), url("../Images/chase.jpg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
