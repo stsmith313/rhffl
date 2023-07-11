@@ -1018,7 +1018,7 @@ table tbody tr td:nth-child(2) {
 }
 
 .table .row .column {
-    padding: .5rem;
+    padding: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
