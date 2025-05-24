@@ -3,14 +3,14 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QPT36ELWNJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPT36ELWNJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-QPT36ELWNJ');
-</script>
+        gtag('config', 'G-QPT36ELWNJ');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,26 +95,26 @@
                 <div class="about">
                     <img src="../Logos/garrett.png" alt="The Money Team" class="team-logo">
                     <div class="name">
-                        <h2>The Money Team</h2>
-                        <p>Garrett Jackson</p>
+                        <h2 id="team-name">Loading...</h2>
+                        <p id="team-owner">Loading...</p>
                     </div>
                 </div>
                 <div class="stats">
                     <div class="card">
                         <small>Record</small>
-                        <h2>9 - 3</h2>
+                        <h2 id="team-record">Loading...</h2>
                     </div>
                     <div class="card">
                         <small>Win %</small>
-                        <h2>75.0%</h2>
+                        <h2 id="team-win-pct">Loading...</h2>
                     </div>
                     <div class="card">
                         <small>Points</small>
-                        <h2>1,913.4</h2>
+                        <h2 id="team-points">Loading...</h2>
                     </div>
                     <div class="card">
                         <small>Standing</small>
-                        <h2>1st West</h2>
+                        <h2 id="team-standing">Loading...</h2>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@
             </div>
             <div class="record-card">
                 <p>Most Points in a Season</p>
-                <h1>2,057.8</h1>
+                <h1>2,273.2</h1>
             </div>
             <div class="record-card">
                 <p>Highest OPR</p>
@@ -162,12 +162,12 @@
                         type: 'line',
                         // The data for our dataset
                         data: {
-                            labels: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+                            labels: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
                             datasets: [{
                                 label: 'Wins',
                                 borderColor: 'rgb(0, 0, 0)',
                                 backgroundColor: 'rgb(190, 159, 69, 0.35)',
-                                data: [10, 11, 9, 13, 11, 11, 7, 9]
+                                data: [10, 11, 9, 13, 11, 11, 7, 9, 0]
                             }]
                         },
 
@@ -494,118 +494,62 @@
 
                 <div class="prestige">
                     <p>Prestige</p>
-                    <h1>1.214</h1>
+                    <h1 id="prestige-value">Loading...</h1>
                 </div>
 
                 <div class="team-stat-card">
                     <h2>Career Stats</h2>
                     <div class="table-container">
-
                         <div class="two-col">
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Wins</span>
-                                </div>
-                                <div class="column">
-                                    <span>81</span>
-                                </div>
+                                <div class="column"><span>Wins</span></div>
+                                <div class="column"><span id="career-wins">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Win Percentage</span>
-                                </div>
-                                <div class="column">
-                                    <span>67.5%</span>
-                                </div>
+                                <div class="column"><span>Win Percentage</span></div>
+                                <div class="column"><span id="career-win-pct">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Points</span>
-                                </div>
-                                <div class="column">
-                                    <span>14,885.0</span>
-                                </div>
+                                <div class="column"><span>Points</span></div>
+                                <div class="column"><span id="career-points">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Points Average</span>
-                                </div>
-                                <div class="column">
-                                    <span>140.6</span>
-                                </div>
+                                <div class="column"><span>Points Average</span></div>
+                                <div class="column"><span id="career-avg">Loading...</span></div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
 
                 <div class="team-stat-card">
                     <h2>Playoff Stats</h2>
                     <div class="table-container">
-
                         <div class="two-col">
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Record</span>
-                                </div>
-                                <div class="column">
-                                    <span>10-4</span>
-                                </div>
+                                <div class="column"><span>Record</span></div>
+                                <div class="column"><span id="playoff-record">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Win Percentage</span>
-                                </div>
-                                <div class="column">
-                                    <span>71.4%</span>
-                                </div>
+                                <div class="column"><span>Win Percentage</span></div>
+                                <div class="column"><span id="playoff-win-pct">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Playoff Byes</span>
-                                </div>
-                                <div class="column">
-                                    <span>3</span>
-                                </div>
+                                <div class="column"><span>Playoff Byes</span></div>
+                                <div class="column"><span id="playoff-byes">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Points</span>
-                                </div>
-                                <div class="column">
-                                    <span>2,061.4</span>
-                                </div>
+                                <div class="column"><span>Points</span></div>
+                                <div class="column"><span id="playoff-points">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Points Average</span>
-                                </div>
-                                <div class="column">
-                                    <span>147.2</span>
-                                </div>
+                                <div class="column"><span>Points Average</span></div>
+                                <div class="column"><span id="playoff-avg">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Championship Record</span>
-                                </div>
-                                <div class="column">
-                                    <span>3-1</span>
-                                </div>
+                                <div class="column"><span>Championship Record</span></div>
+                                <div class="column"><span id="champ-record">Loading...</span></div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
 
@@ -702,6 +646,18 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="column">
+                                    <span>2024</span>
+                                </div>
+                                <div class="column">
+                                    <span>13 - 3</span>
+                                </div>
+                                <div class="column">
+                                    <span>1st</span>
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -730,6 +686,8 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.js" type="text/javascript"></script>
     <script src="../JS/static.js"></script>
+    <script src="../JS/Teams/garrettTD.js"></script>
+    <script src="../JS/Google/garrettGS.js"></script>
 </body>
 
 </html>
