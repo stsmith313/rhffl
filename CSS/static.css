@@ -504,6 +504,27 @@ section {
     margin: 2rem 0
 }
 
+.team-link {
+            display: flex;
+            align-items: center;
+}
+
+.team-name {
+            font-weight: bold;
+}
+
+.bottom small {
+            display: block;
+            font-size: 0.75em;
+}
+
+.division-leader {
+            background-color: #fff8dc;
+            border-left: 4px solid gold;
+            font-weight: bold;
+            box-shadow: 0 0 6px gold;
+}
+
 @media only screen and (min-width: 1024px) {
     section {
         display: -webkit-box;
