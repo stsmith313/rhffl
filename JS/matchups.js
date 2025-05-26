@@ -1,7 +1,7 @@
 const LEAGUE_ID = '467985'; // Replace with your actual league ID
   const SEASON_ID = 2025;
   const LOCAL_LOGOS = {
-    1: "ridge.png",
+        1: "ridge.png",
         3: "kevin.png",
         4: "josiah.png",
         5: "scott.png",
