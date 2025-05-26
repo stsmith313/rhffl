@@ -32,15 +32,15 @@ html {
     font-size: 50px;
     color: #013369;
     line-height: 3rem;
-}
+  }
 
-#dem {
+  #dem {
     text-align: center;
     font-weight: bold;
     font-size: 50px;
     color: #d50a0a;
     line-height: 3.5rem;
-}
+  }
 
 @media only screen and (min-width: 768px) {
     .title {
@@ -429,99 +429,6 @@ body {
     box-shadow: 0 10px 60px -6px rgba(0, 0, 0, 0.2)
 }
 
-.team-link {
-    display: flex;
-    align-items: center;
-}
-
-.team-name {
-    font-weight: bold;
-}
-
-.bottom small {
-    display: block;
-    font-size: 0.75em;
-}
-
-.division-leader {
-    background-color: #fff8dc;
-    border-left: 4px solid gold;
-    font-weight: bold;
-    box-shadow: 0 0 6px gold;
-}
-
-.matchup {
-    margin-bottom: 16px;
-    padding: 12px;
-    border-radius: 8px;
-    transition: background-color 0.5s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.team {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.5s ease;
-}
-
-.score {
-    text-align: center;
-    min-width: 120px;
-    font-weight: bold;
-    transition: color 0.5s ease;
-}
-
-.winner {
-    background-color: #e0f8e0;
-    border-left: 4px solid #4CAF50;
-}
-
-.loser {
-    background-color: #fbeaea;
-    border-left: 4px solid #f44336;
-}
-
-.tie {
-    background-color: #f0f0f0;
-    border-left: 4px solid #999;
-}
-
-.team-logo {
-    width: 40px;
-    height: 40px;
-}
-
-.fade-up {
-    animation: fadeUp 0.4s ease;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.week-label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.team-name {
-    font-weight: bold;
-}
-
 .swiper-container:hover {
     cursor: -webkit-grabbing;
     cursor: grabbing
@@ -613,16 +520,12 @@ section {
 }
 
 .left-side {
-    padding-right: 3rem;
-    background: #F8F8F8;
-    padding: 1rem;
-    -webkit-box-shadow: 0 10px 7px 0px rgba(142, 142, 142, 0.16);
-    box-shadow: 0 10px 7px 0px rgba(142, 142, 142, 0.16)
+    padding-right: 1rem
 }
 
 @media only screen and (min-width: 1024px) {
     .left-side {
-        width: 57%
+        width: 58%
     }
 }
 
@@ -2146,20 +2049,20 @@ table tbody tr td:nth-child(2) {
     transition: all 0.3s ease;
     min-height: 204px;
     border-radius: 15px;
-}
+  }
 
-.timer:hover {
+  .timer:hover {
     -webkit-box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-}
+  }
 
-.timer .timerBody {
+  .timer .timerBody {
     padding: 10px;
     border-radius: 15px;
-}
+  }
 
 @media only screen and (min-width: 768px) {
     .record-container:nth-child(odd) {
@@ -2230,6 +2133,166 @@ table tbody tr td:nth-child(2) {
     .fourohfour {
         width: 50%
     }
+}
+
+.team-link {
+            display: flex;
+            align-items: center;
+}
+
+.team-name {
+            font-weight: bold;
+}
+
+.bottom small {
+            display: block;
+            font-size: 0.75em;
+}
+
+.division-leader {
+            background-color: #fff8dc;
+            border-left: 4px solid gold;
+            font-weight: bold;
+            box-shadow: 0 0 6px gold;
+}
+
+    /* Container for all matchups */
+#matchups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Individual matchup block */
+.matchup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+.matchup:hover {
+  transform: scale(1.02);
+}
+
+/* Teams section */
+.teams {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1; /* Make team containers flexible */
+  min-width: 0; /* Allows text overflow handling */
+}
+
+.teams > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Logos */
+.teams-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+
+/* Text inside each team block */
+.teams-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.record {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* Outcome colors */
+.winner {
+  border-left: 4px solid #4caf50;
+  padding-left: 8px;
+}
+.loser {
+  opacity: 0.6;
+}
+.tie {
+  border-left: 4px solid #9e9e9e;
+  padding-left: 8px;
+}
+
+/* Animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .matchup {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  .teams {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .score {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .teams-logo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .teams-name,
+  .record {
+    width: 100%;
+  }
+}
+
+.matchup-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+#matchups {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.matchup-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.min.css.map */

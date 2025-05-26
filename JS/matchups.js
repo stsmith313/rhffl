@@ -1,18 +1,18 @@
 const LEAGUE_ID = '467985'; // Replace with your actual league ID
   const SEASON_ID = 2025;
   const LOCAL_LOGOS = {
-        1: "ridge.png",
-        3: "kevin.png",
-        4: "josiah.png",
-        5: "scott.png",
-        10: "chandler.png",
-        12: "garrett.png",
-        13: "spencer.png",
-        16: "krista.png",
-        18: "gabi.png",
-        20: "joey.png",
-        19: "sam.png",
-        15: "chris.png"
+        1: "Logos/ridge.png",
+        3: "Logos/kevin.png",
+        4: "Logos/josiah.png",
+        5: "Logos/scott.png",
+        10: "Logos/chandler.png",
+        12: "Logos/garrett.png",
+        13: "Logos/spencer.png",
+        16: "Logos/krista.png",
+        18: "Logos/gabi.png",
+        20: "Logos/joey.png",
+        19: "Logos/sam.png",
+        15: "Logos/chris.png"
     // Add all your teamId -> logo paths here
   };
 
