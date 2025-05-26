@@ -6,18 +6,17 @@ async function fetchStandings() {
 
     // Map team IDs to local logo filenames
     const teamLogoMap = {
-        1: "sam.png",
-        2: "ridge.png",
+        1: "ridge.png",
         3: "kevin.png",
-        4: "chris.png",
-        5: "joey.png",
-        6: "ridge.png",
-        7: "gabi.png",
-        8: "chandler.png",
-        9: "spencer.png",
-        10: "scott.png",
-        11: "krista.png",
-        12: "garrett.png"
+        4: "josiah.png",
+        5: "scott.png",
+        10: "chandler.png",
+        12: "garrett.png",
+        13: "spencer.png",
+        16: "krista.png",
+        18: "gabi.png",
+        20: "joey.png",
+        19: "sam.png"
         // Add or update team IDs and filenames here
     };
 
