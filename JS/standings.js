@@ -16,7 +16,8 @@ async function fetchStandings() {
         16: "krista.png",
         18: "gabi.png",
         20: "joey.png",
-        19: "sam.png"
+        19: "sam.png",
+        15: "chris.png"
         // Add or update team IDs and filenames here
     };
 
