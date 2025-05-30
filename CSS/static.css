@@ -2295,4 +2295,108 @@ table tbody tr td:nth-child(2) {
   margin: 0 auto;
 }
 
+label {
+     margin-right: 10px;
+}
+
+select {
+     padding: 8px 14px;
+     font-size: 15px;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     background-color: #fff;
+     color: #333;
+     margin: 0 10px 20px 0;
+     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+     transition: all 0.2s ease-in-out;
+     appearance: none;
+     -webkit-appearance: none;
+     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23444' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+     background-repeat: no-repeat;
+     background-position: right 10px center;
+     background-size: 12px;
+}
+
+select:focus {
+     border-color: #999;
+     outline: none;
+     box-shadow: 0 0 0 2px rgba(100, 150, 250, 0.2);
+}
+
+label {
+     font-weight: 500;
+     margin-right: 5px;
+     font-size: 15px;
+}
+
+.results-table {
+     width: 100%;
+     border-radius: 10px;
+     border-collapse: separate;
+     border-spacing: 0;
+     overflow: hidden;
+     background-color: white;
+     box-shadow: 0 10px 7px 0 rgba(142, 142, 142, 0.16);
+}
+
+.results-table th {
+     background-color: #f2f2f2;
+     padding: 12px;
+     text-align: center;
+     font-weight: bold;
+     font-size: 14px;
+     border-bottom: 1px solid #ddd;
+}
+
+.results-table td {
+     padding: 12px;
+     text-align: center;
+     font-size: 14px;
+     border-bottom: 1px solid #eee;
+}
+
+label[for="team1"],
+label[for="team2"] {
+     font-size: 18px;
+     /* increase font size */
+     font-weight: 700;
+     /* make them bold */
+     color: #222;
+     /* darker color for emphasis */
+     margin-right: 8px;
+     /* spacing to the dropdown */
+}
+
+ /* Top left & right corners */
+.results-table thead th:first-child {
+     border-top-left-radius: 10px;
+}
+
+.results-table thead th:last-child {
+     border-top-right-radius: 10px;
+}
+
+ /* Bottom left & right corners */
+.results-table tbody tr:last-child td:first-child {
+     border-bottom-left-radius: 10px;
+}
+
+.results-table tbody tr:last-child td:last-child {
+     border-bottom-right-radius: 10px;
+}
+
+.winner {
+     background-color: #e3f7e3;
+     font-weight: bold;
+}
+
+.loser {
+     background-color: #fde2e2;
+}
+
+#results p {
+     margin-top: 20px;
+     font-size: 16px;
+}
+
 /*# sourceMappingURL=style.min.css.map */
