@@ -137,8 +137,20 @@
 
         /* Gold ring for multi-time champs */
         .multi-win img {
-            border-color: gold;
-            box-shadow: 0 0 10px gold;
+            border: 5px solid #b8860b;
+            /* Dark GoldenRod for richer gold */
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px #daa520;
+            /* GoldenRod glow */
+            transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        .multi-win img:hover {
+            animation: goldGlowPulse 2s infinite alternate;
+            border-color: #ffd700;
+            /* Bright gold on hover */
+            box-shadow: 0 0 30px 10px #ffd700;
+            /* Bright glowing gold */
         }
 
         .player-detail p {
@@ -166,6 +178,18 @@
 
         .shame-row:hover {
             background: #3a2626;
+        }
+
+        @keyframes goldGlowPulse {
+            0% {
+                box-shadow: 0 0 15px 5px #daa520;
+                border-color: #b8860b;
+            }
+
+            100% {
+                box-shadow: 0 0 40px 15px #ffec8b;
+                border-color: #ffd700;
+            }
         }
     </style>
     <!-- Required meta tags -->
