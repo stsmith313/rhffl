@@ -2399,4 +2399,44 @@ label[for="team2"] {
      font-size: 16px;
 }
 
+.rank-change {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: bounceIn 0.4s ease;
+}
+
+.rank-change.up {
+    color: #28a745; /* Green */
+}
+
+.rank-change.down {
+    color: #dc3545; /* Red */
+}
+
+.rank-change.same {
+    color: #6c757d; /* Gray */
+}
+
+/* Optional Hover Pop Effect */
+.rank-change:hover {
+    transform: scale(1.2);
+}
+
+/* Entry Animation */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 /*# sourceMappingURL=style.min.css.map */
