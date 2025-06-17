@@ -2527,7 +2527,7 @@ canvas { margin-top: 30px; background: #ffffff; border-radius: 8px; }
 }
 
 /* Team logos */
-.team-logo {
+.record-logo {
   width: 100px;
   height: 100px;
   object-fit: contain;
@@ -2535,7 +2535,7 @@ canvas { margin-top: 30px; background: #ffffff; border-radius: 8px; }
   border-radius: 50%;
   border: 2px solid #0f9d58;
   box-shadow: 0 0 7px #0f9d58aa;
-  background: #121212;
+  background: #ffffff;
 }
 
 /* Record title */
