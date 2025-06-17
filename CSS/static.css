@@ -2439,4 +2439,15 @@ label[for="team2"] {
     }
 }
 
+.team-stats { margin-top: 30px; display: flex; justify-content: space-around; }
+
+.team-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 45%;
+}
+
+canvas { margin-top: 30px; background: #ffffff; border-radius: 8px; }
+
 /*# sourceMappingURL=style.min.css.map */

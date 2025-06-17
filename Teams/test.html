@@ -3,14 +3,16 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QPT36ELWNJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPT36ELWNJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-QPT36ELWNJ');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-QPT36ELWNJ');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +36,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
-    <title>RHFL | The Long Bombers</title>
+    <title>RHFL | The Cerebral Assassins</title>
 
 </head>
 
@@ -74,7 +76,6 @@
             </div>
         </div>
 
-
         <div class="mobile-nav">
             <a href="../index"><img src="../Logos/trophy.svg" class='nav-logo' alt="RHFL Main Logo"></a>
             <ul>
@@ -87,42 +88,36 @@
             </ul>
         </div>
 
-
-
-
+        <!-- Team Header: Dynamically populated via ESPN Fantasy Football API -->
         <div class="team-header">
-            <div class="team-uniform">
-                <img src="/Logos/test.png.png">
-            </div>
             <div class="detail">
                 <div class="about">
-                    <img src="../Logos/sam.png" alt="The Long Bombers" class="team-logo">
+                    <img src="../Logos/chandler.png" alt="The Cerebral Assassins" class="team-logo" id="team-logo">
                     <div class="name">
-                        <h2>The Long Bombers</h2>
-                        <p>Sam Smith</p>
+                        <h2 id="team-name">Loading...</h2>
+                        <p id="team-owner">Loading...</p>
                     </div>
-                    <img src="../Logos/test.png.png" alt="The Long Bombers Helmet" class="team-uniform">
                 </div>
                 <div class="stats">
                     <div class="card">
                         <small>Record</small>
-                        <h2>8 - 7</h2>
+                        <h2 id="team-record">Loading...</h2>
                     </div>
                     <div class="card">
                         <small>Win %</small>
-                        <h2>53.3%</h2>
+                        <h2 id="team-win-pct">Loading...</h2>
                     </div>
                     <div class="card">
                         <small>Points</small>
-                        <h2>1,903.5</h2>
+                        <h2 id="team-points">Loading...</h2>
                     </div>
                     <div class="card">
                         <small>Standing</small>
-                        <h2>1st AFC</h2>
+                        <h2 id="team-standing">Loading...</h2>
                     </div>
                 </div>
             </div>
-
+            <img src="../Mascots/chandler-mascot.png" alt="Team Mascot" class="team-uniform" id="team-mascot">
         </div>
 
         <h2>Career Highs</h2>
@@ -133,15 +128,15 @@
             </div>
             <div class="record-card">
                 <p>Most Points in a Game</p>
-                <h1>211.1</h1>
+                <h1>215.2</h1>
             </div>
             <div class="record-card">
                 <p>Most Points in a Season</p>
-                <h1>1,903.5</h1>
+                <h1>2,222.9</h1>
             </div>
             <div class="record-card">
                 <p>Highest OPR</p>
-                <h1>1.273</h1>
+                <h1>1.201</h1>
             </div>
             <div class="record-card">
                 <p>Highest Finish</p>
@@ -149,10 +144,9 @@
             </div>
             <div class="record-card">
                 <p>Largest Win Margin</p>
-                <h1>107.0</h1>
+                <h1>121.2</h1>
             </div>
         </div>
-
 
         <section>
 
@@ -166,15 +160,16 @@
                         type: 'line',
                         // The data for our dataset
                         data: {
-                            labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+                            labels: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022,
+                                2023, 2024, 2025
+                            ],
                             datasets: [{
                                 label: 'Wins',
                                 borderColor: 'rgb(0, 0, 0)',
-                                backgroundColor: 'rgba(208, 32, 48, 0.35)',
-                                data: [4, 8, 9, 6, 10, 6, 12, 11, 3, 8]
+                                backgroundColor: 'rgb(227, 198, 166, 0.35)',
+                                data: [4, 6, 6, 10, 10, 6, 6, 7, 8, 8, 6, 11, 12, 8, 0]
                             }]
                         },
-
                         // Configuration options go here
                         options: {
                             scales: {
@@ -209,119 +204,103 @@
                             <div class="row">
                                 <div class="column" id='player-column'>
 
-
                                     <div class="player-detail">
-                                        <p>Most Winning Seasons </p>
+                                        <p>Most Wins (Career): </p>
                                     </div>
                                 </div>
                                 <div class="column">
-                                    <span>8</span>
+                                    <span>91</span>
                                 </div>
                                 <div class="column">
-                                    <span>2012, 2014-2017, 2019-2020, 2022</span>
+                                    <span>2012-Present</span>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="column" id='player-column'>
 
-
                                     <div class="player-detail">
-                                        <p>Most Playoff Appearances</p>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <span>7</span>
-                                </div>
-                                <div class="column">
-                                    <span>2012, 2014-2015, 2017, 2019-2020, 2022</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="column" id='player-column'>
-
-
-                                    <div class="player-detail">
-                                        <p>Most First-Round Byes </p>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <span>3</span>
-                                </div>
-                                <div class="column">
-                                    <span>2019-2020, 2022</span>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="column" id='player-column'>
-
-
-                                    <div class="player-detail">
-                                        <p>Most Consecutive First-Round Byes </p>
+                                        <p>Most Consecutive First-Round Byes: </p>
                                     </div>
                                 </div>
                                 <div class="column">
                                     <span>2</span>
                                 </div>
                                 <div class="column">
-                                    <span>2019-2020</span>
+                                    <span>2022-2023</span>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="column" id='player-column'>
 
-
                                     <div class="player-detail">
-                                        <p>Most Consecutive Championship Games </p>
+                                        <p>Longest Losing Streak to Begin Season While Making Championship Game: </p>
                                     </div>
                                 </div>
                                 <div class="column">
                                     <span>2</span>
                                 </div>
                                 <div class="column">
-                                    <span>2019-2020</span>
+                                    <span>2023</span>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="column" id='player-column'>
 
-
                                     <div class="player-detail">
-                                        <p>Largest Margin of Victory, Season Average </p>
+                                        <p>Most Points in Championship Game: </p>
                                     </div>
                                 </div>
                                 <div class="column">
-                                    <span>31.8</span>
+                                    <span>183.9</span>
                                 </div>
                                 <div class="column">
-                                    <span>2019</span>
+                                    <span>2023</span>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="column" id='player-column'>
 
-
                                     <div class="player-detail">
-                                        <p>Best Point Differential </p>
+                                        <p>Smallest Margin of Defeat, Season Average: </p>
                                     </div>
                                 </div>
                                 <div class="column">
-                                    <span>413.8</span>
+                                    <span>0.5</span>
                                 </div>
                                 <div class="column">
-                                    <span>2019</span>
+                                    <span>2015</span>
                                 </div>
                             </div>
-
 
                         </div>
 
                     </div>
                 </div>
+
+                <h2>Head-to-Head Matchups</h2>
+
+                <label for="team1">Team 1:</label>
+                <select id="team1">
+                    <option value="">-- Select Team 1 --</option>
+                </select>
+
+                <label for="team2">Team 2:</label>
+                <select id="team2">
+                    <option value="">-- Select Team 2 --</option>
+                </select>
+
+                <div id="results"></div>
+
+                <div class="team-stats">
+                    <div class="team-card" id="team1-stats"></div>
+                    <div class="team-card" id="team2-stats"></div>
+                </div>
+
+                <canvas id="trendChart" width="800" height="300"></canvas>
 
             </div>
 
@@ -329,118 +308,62 @@
 
                 <div class="prestige">
                     <p>Prestige</p>
-                    <h1>1.093</h1>
+                    <h1 id="prestige-value">Loading...</h1>
                 </div>
 
                 <div class="team-stat-card">
                     <h2>Career Stats</h2>
                     <div class="table-container">
-
                         <div class="two-col">
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Wins</span>
-                                </div>
-                                <div class="column">
-                                    <span>77</span>
-                                </div>
+                                <div class="column"><span>Wins</span></div>
+                                <div class="column"><span id="career-wins">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Win Percentage</span>
-                                </div>
-                                <div class="column">
-                                    <span>54.2%</span>
-                                </div>
+                                <div class="column"><span>Win Percentage</span></div>
+                                <div class="column"><span id="career-win-pct">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Points</span>
-                                </div>
-                                <div class="column">
-                                    <span>16,681.8</span>
-                                </div>
+                                <div class="column"><span>Points</span></div>
+                                <div class="column"><span id="career-points">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Points Average</span>
-                                </div>
-                                <div class="column">
-                                    <span>126.4</span>
-                                </div>
+                                <div class="column"><span>Points Average</span></div>
+                                <div class="column"><span id="career-avg">Loading...</span></div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
 
                 <div class="team-stat-card">
                     <h2>Playoff Stats</h2>
                     <div class="table-container">
-
                         <div class="two-col">
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Record</span>
-                                </div>
-                                <div class="column">
-                                    <span>4-6</span>
-                                </div>
+                                <div class="column"><span>Record</span></div>
+                                <div class="column"><span id="playoff-record">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Win Percentage</span>
-                                </div>
-                                <div class="column">
-                                    <span>40.0%</span>
-                                </div>
+                                <div class="column"><span>Win Percentage</span></div>
+                                <div class="column"><span id="playoff-win-pct">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Playoff Byes</span>
-                                </div>
-                                <div class="column">
-                                    <span>3</span>
-                                </div>
+                                <div class="column"><span>Playoff Byes</span></div>
+                                <div class="column"><span id="playoff-byes">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Points</span>
-                                </div>
-                                <div class="column">
-                                    <span>1,199.6</span>
-                                </div>
+                                <div class="column"><span>Points</span></div>
+                                <div class="column"><span id="playoff-points">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Points Average</span>
-                                </div>
-                                <div class="column">
-                                    <span>150.0</span>
-                                </div>
+                                <div class="column"><span>Points Average</span></div>
+                                <div class="column"><span id="playoff-avg">Loading...</span></div>
                             </div>
-
                             <div class="row">
-                                <div class="column">
-                                    <span>Championship Record</span>
-                                </div>
-                                <div class="column">
-                                    <span>1-1</span>
-                                </div>
+                                <div class="column"><span>Championship Record</span></div>
+                                <div class="column"><span id="champ-record">Loading...</span></div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
 
@@ -453,97 +376,36 @@
 
                         <div class="table-plain 2-col">
 
-
                             <div class="row">
                                 <div class="column">
                                     <span>2013</span>
                                 </div>
                                 <div class="column">
-                                    <span>4 - 9</span>
+                                    <span>6 - 7</span>
                                 </div>
                                 <div class="column">
-                                    <span>9th</span>
+                                    <span>8th</span>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="column">
                                     <span>2014</span>
                                 </div>
                                 <div class="column">
-                                    <span>8 - 6</span>
+                                    <span>11 - 5</span>
                                 </div>
                                 <div class="column">
-                                    <span>7th</span>
+                                    <span>3rd</span>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="column">
                                     <span>2015</span>
                                 </div>
                                 <div class="column">
-                                    <span>9 - 4 - 1</span>
-                                </div>
-                                <div class="column">
-                                    <span>5th</span>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="column">
-                                    <span>2016</span>
-                                </div>
-                                <div class="column">
-                                    <span>6 - 5 - 2</span>
-                                </div>
-                                <div class="column">
-                                    <span>7th</span>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="column">
-                                    <span>2017</span>
-                                </div>
-                                <div class="column">
-                                    <span>10 - 5</span>
-                                </div>
-                                <div class="column">
-                                    <span>4th</span>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="column">
-                                    <span>2018</span>
-                                </div>
-                                <div class="column">
-                                    <span>6 - 7</span>
-                                </div>
-                                <div class="column">
-                                    <span>11th</span>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="column">
-                                    <span>2019</span>
-                                </div>
-                                <div class="column">
-                                    <span>12 - 3</span>
-                                </div>
-                                <div class="column">
-                                    <span>1st</span>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="column">
-                                    <span>2020</span>
-                                </div>
-                                <div class="column">
-                                    <span>11 - 4</span>
+                                    <span>10 - 6</span>
                                 </div>
                                 <div class="column">
                                     <span>2nd</span>
@@ -552,13 +414,73 @@
 
                             <div class="row">
                                 <div class="column">
+                                    <span>2016</span>
+                                </div>
+                                <div class="column">
+                                    <span>6 - 7</span>
+                                </div>
+                                <div class="column">
+                                    <span>8th</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
+                                    <span>2017</span>
+                                </div>
+                                <div class="column">
+                                    <span>6 - 7</span>
+                                </div>
+                                <div class="column">
+                                    <span>9th</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
+                                    <span>2018</span>
+                                </div>
+                                <div class="column">
+                                    <span>7 - 6</span>
+                                </div>
+                                <div class="column">
+                                    <span>7th</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
+                                    <span>2019</span>
+                                </div>
+                                <div class="column">
+                                    <span>8 - 5</span>
+                                </div>
+                                <div class="column">
+                                    <span>8th</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
+                                    <span>2020</span>
+                                </div>
+                                <div class="column">
+                                    <span>8 - 6</span>
+                                </div>
+                                <div class="column">
+                                    <span>5th</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
                                     <span>2021</span>
                                 </div>
                                 <div class="column">
-                                    <span>3 - 11</span>
+                                    <span>6 - 8</span>
                                 </div>
                                 <div class="column">
-                                    <span>13th</span>
+                                    <span>9th</span>
                                 </div>
                             </div>
 
@@ -567,40 +489,62 @@
                                     <span>2022</span>
                                 </div>
                                 <div class="column">
-                                    <span>8 - 6</span>
+                                    <span>11 - 4</span>
                                 </div>
                                 <div class="column">
-                                    <span>3rd</span>
+                                    <span>4th</span>
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="column">
+                                    <span>2023</span>
+                                </div>
+                                <div class="column">
+                                    <span>13 - 3</span>
+                                </div>
+                                <div class="column">
+                                    <span>1st</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
+                                    <span>2024</span>
+                                </div>
+                                <div class="column">
+                                    <span>8 - 8</span>
+                                </div>
+                                <div class="column">
+                                    <span>2nd</span>
+                                </div>
+                            </div>
 
                         </div>
 
                     </div>
                 </div>
+
             </div>
 
         </section>
-
-
-
-
-
-
-
 
         <footer class="mt-3">
         </footer>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../JS/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.js" type="text/javascript"></script>
     <script src="../JS/static.js"></script>
+    <script src="../JS/Teams/chandlerTD.js"></script>
+    <script src="../JS/Google/chandlerGS.js"></script>
+    <script src="../JS/results.js"></script>
 </body>
 
 </html>
