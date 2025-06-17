@@ -2450,4 +2450,10 @@ label[for="team2"] {
 
 canvas { margin-top: 30px; background: #ffffff; border-radius: 8px; }
 
+.highlight {
+  border-bottom: 2px solid red;
+  font-weight: bold;
+  color: #116530;
+}
+
 /*# sourceMappingURL=style.min.css.map */

@@ -171,26 +171,44 @@ function renderTeamStats(team1, team2) {
   const stats1 = getAllTimeStats(team1, allMatchups);
   const stats2 = getAllTimeStats(team2, allMatchups);
 
+  function compareStat(stat, isHigherBetter = true) {
+    const val1 = parseFloat(stats1[stat]);
+    const val2 = parseFloat(stats2[stat]);
+    
+    const highlight1 = (isHigherBetter ? val1 > val2 : val1 < val2) ? 'highlight' : '';
+    const highlight2 = (isHigherBetter ? val2 > val1 : val2 < val1) ? 'highlight' : '';
+
+    return { highlight1, highlight2 };
+  }
+
+  const w = compareStat('wins');
+  const l = compareStat('losses', false); // lower losses is better
+  const t = compareStat('ties'); // optional, up to you if you want to highlight this
+  const pf = compareStat('pf');
+  const pa = compareStat('pa', false); // lower PA is better
+  const ppg = compareStat('ppg');
+
   document.getElementById('team1-stats').innerHTML = `
     <h3>${team1} - All Time Stats</h3>
-    <p>Wins: ${stats1.wins}</p>
-    <p>Losses: ${stats1.losses}</p>
-    <p>Ties: ${stats1.ties}</p>
-    <p>Points For (PF): ${stats1.pf}</p>
-    <p>Points Against (PA): ${stats1.pa}</p>
-    <p>Points Per Game (PPG): ${stats1.ppg}</p>
+    <p class="${w.highlight1}">Wins: ${stats1.wins}</p>
+    <p class="${l.highlight1}">Losses: ${stats1.losses}</p>
+    <p class="${t.highlight1}">Ties: ${stats1.ties}</p>
+    <p class="${pf.highlight1}">Points For (PF): ${stats1.pf}</p>
+    <p class="${pa.highlight1}">Points Against (PA): ${stats1.pa}</p>
+    <p class="${ppg.highlight1}">Points Per Game (PPG): ${stats1.ppg}</p>
   `;
 
   document.getElementById('team2-stats').innerHTML = `
     <h3>${team2} - All Time Stats</h3>
-    <p>Wins: ${stats2.wins}</p>
-    <p>Losses: ${stats2.losses}</p>
-    <p>Ties: ${stats2.ties}</p>
-    <p>Points For (PF): ${stats2.pf}</p>
-    <p>Points Against (PA): ${stats2.pa}</p>
-    <p>Points Per Game (PPG): ${stats2.ppg}</p>
+    <p class="${w.highlight2}">Wins: ${stats2.wins}</p>
+    <p class="${l.highlight2}">Losses: ${stats2.losses}</p>
+    <p class="${t.highlight2}">Ties: ${stats2.ties}</p>
+    <p class="${pf.highlight2}">Points For (PF): ${stats2.pf}</p>
+    <p class="${pa.highlight2}">Points Against (PA): ${stats2.pa}</p>
+    <p class="${ppg.highlight2}">Points Per Game (PPG): ${stats2.ppg}</p>
   `;
 }
+
 
 function clearTeamStats() {
   document.getElementById('team1-stats').innerHTML = '';
@@ -200,7 +218,6 @@ function clearTeamStats() {
 let chart = null;
 
 function renderTrendChart(matchups, team1, team2) {
-  // Sort chronologically ascending for trend
   const sorted = [...matchups].sort((a, b) => {
     if (a.year !== b.year) return a.year - b.year;
     return a.week - b.week;
@@ -208,21 +225,26 @@ function renderTrendChart(matchups, team1, team2) {
 
   const labels = sorted.map(m => `${m.year} Wk${m.week}`);
 
-  // Points for each team per game
-  const team1Points = sorted.map(m => {
-    if (m.team1 === team1) return m.score1;
-    else if (m.team2 === team1) return m.score2;
-    return 0;
-  });
+  const team1Points = [];
+  const team2Points = [];
+  const tooltips = [];
 
-  const team2Points = sorted.map(m => {
-    if (m.team1 === team2) return m.score1;
-    else if (m.team2 === team2) return m.score2;
-    return 0;
+  sorted.forEach(m => {
+    let t1Score, t2Score;
+    if (m.team1 === team1 && m.team2 === team2) {
+      t1Score = m.score1;
+      t2Score = m.score2;
+    } else {
+      t1Score = m.score2;
+      t2Score = m.score1;
+    }
+
+    team1Points.push(t1Score);
+    team2Points.push(t2Score);
+    tooltips.push(`${m.team1} ${m.score1} - ${m.score2} ${m.team2} (${m.year} Wk${m.week})`);
   });
 
   const ctx = document.getElementById('trendChart').getContext('2d');
-
   if (chart) chart.destroy();
 
   chart = new Chart(ctx, {
@@ -250,7 +272,22 @@ function renderTrendChart(matchups, team1, team2) {
     },
     options: {
       responsive: true,
+      interaction: {
+        mode: 'index',
+        intersect: false
+      },
       plugins: {
+        tooltip: {
+          callbacks: {
+            title: function(context) {
+              const idx = context[0].dataIndex;
+              return tooltips[idx];
+            },
+            label: function(context) {
+              return `${context.dataset.label}: ${context.formattedValue}`;
+            }
+          }
+        },
         legend: {
           labels: { color: '#ddd' }
         },
@@ -269,10 +306,25 @@ function renderTrendChart(matchups, team1, team2) {
           beginAtZero: true,
           ticks: { color: '#000000' }
         }
+      },
+      onClick: (event, elements) => {
+        if (elements.length > 0) {
+          const index = elements[0].index;
+          const match = sorted[index];
+          const selector = `[data-match='${match.year}-W${match.week}']`;
+          const row = document.querySelector(selector);
+          if (row) {
+            row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            row.classList.add('highlight');
+            setTimeout(() => row.classList.remove('highlight'), 1500);
+          }
+        }
       }
     }
   });
 }
+
+
 
 function clearChart() {
   if(chart){
