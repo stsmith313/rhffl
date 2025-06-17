@@ -255,16 +255,16 @@ function renderTrendChart(matchups, team1, team2) {
         {
           label: team1,
           data: team1Points,
-          borderColor: '#f0a500',
-          backgroundColor: 'rgba(240, 165, 0, 0.3)',
+          borderColor: '#008000',
+          backgroundColor: 'rgba(0, 128, 0, 0.3)',
           fill: false,
           tension: 0.1
         },
         {
           label: team2,
           data: team2Points,
-          borderColor: '#00aaff',
-          backgroundColor: 'rgba(0, 170, 255, 0.3)',
+          borderColor: '#DC143C',
+          backgroundColor: 'rgba(220, 20, 60, 0.3)',
           fill: false,
           tension: 0.1
         }
@@ -289,12 +289,12 @@ function renderTrendChart(matchups, team1, team2) {
           }
         },
         legend: {
-          labels: { color: '#ddd' }
+          labels: { color: '#ddddd' }
         },
         title: {
           display: true,
           text: 'Points Trend Per Matchup',
-          color: '#f0a500',
+          color: '#ddddd',
           font: { size: 20 }
         }
       },
