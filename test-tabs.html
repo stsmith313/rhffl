@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rock Hill Fantasy League Records</title>
+<style>
+  /* Reset and base */
+
+  /* Tabs container */
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  /* Individual tab button */
+  .tab-button {
+    background: #222;
+    color: #eee;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    flex-grow: 1;
+    max-width: 180px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+  }
+
+  .tab-button:hover:not(.active) {
+    background: #0f9d58aa;
+  }
+
+  .tab-button.active {
+    background: #0f9d58;
+    color: #fff;
+    box-shadow: 0 0 10px #0f9d58cc;
+  }
+
+  /* Tab content container */
+  .tab-content {
+    display: none;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .tab-content.active {
+    display: flex;
+  }
+
+  /* Each record card */
+  .record-card {
+    background: #222;
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 0 10px rgba(15, 157, 88, 0.7);
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .record-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 16px #0f9d58cc;
+  }
+
+  /* Team logos */
+  .team-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
+    border-radius: 50%;
+    border: 2px solid #0f9d58;
+    box-shadow: 0 0 7px #0f9d58aa;
+    background: #121212;
+  }
+
+  /* Record title */
+  .record-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #0f9d58;
+  }
+
+  /* Animated stat */
+  .record-stat {
+    font-weight: 900;
+    font-size: 3rem;
+    color: #0f9d58;
+    margin-bottom: 0.4rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Additional info */
+  .record-info {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    .record-card {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .record-card {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Rock Hill Fantasy League Records</h1>
+
+<div class="tabs" role="tablist" aria-label="Fantasy football record categories">
+  <button class="tab-button active" data-tab="single-season" role="tab" aria-selected="true" aria-controls="single-season" id="tab-single-season">Single-Season Records</button>
+  <button class="tab-button" data-tab="career-records" role="tab" aria-selected="false" aria-controls="career-records" id="tab-career-records">Career Records</button>
+  <button class="tab-button" data-tab="playoff-records" role="tab" aria-selected="false" aria-controls="playoff-records" id="tab-playoff-records">Playoff Records</button>
+  <button class="tab-button" data-tab="championships" role="tab" aria-selected="false" aria-controls="championships" id="tab-championships">Championships</button>
+  <button class="tab-button" data-tab="points-moves" role="tab" aria-selected="false" aria-controls="points-moves" id="tab-points-moves">Points & Moves</button>
+</div>
+
+<!-- SINGLE SEASON -->
+<section id="single-season" class="tab-content active" role="tabpanel" aria-labelledby="tab-single-season" tabindex="0">
+  <article class="record-card">
+    <img src="logos/cerebral_assassins.png" alt="Cerebral Assassins Logo" class="team-logo" />
+    <h3>Most Points in a Season</h3>
+    <div class="record-stat" data-value="2048">0</div>
+    <div class="record-info">Cerebral Assassins (2023)</div>
+  </article>
+  <article class="record-card">
+    <img src="logos/chrispy_boys.png" alt="Chrispy Boys Logo" class="team-logo" />
+    <h3>Highest PPG</h3>
+    <div class="record-stat" data-value="158.6">0</div>
+    <div class="record-info">Chrispy Boys (2022)</div>
+  </article>
+  <article class="record-card">
+    <img src="logos/alston.png" alt="Alston Logo" class="team-logo" />
+    <h3>Most Moves in a Season</h3>
+    <div class="record-stat" data-value="86">0</div>
+    <div class="record-info">Alston (2022)</div>
+  </article>
+</section>
+
+<!-- CAREER RECORDS -->
+<section id="career-records" class="tab-content" role="tabpanel" aria-labelledby="tab-career-records" tabindex="0" hidden>
+  <article class="record-card">
+    <img src="logos/garrett.png" alt="Garrett Logo" class="team-logo" />
+    <h3>Total Wins</h3>
+    <div class="record-stat" data-value="74">0</div>
+    <div class="record-info">Garrett (2017-Present)</div>
+  </article>
+  <article class="record-card">
+    <img src="logos/money_team.png" alt="The Money Team Logo" class="team-logo" />
+    <h3>Best Career Win %</h3>
+    <div class="record-stat" data-value="68.5">0</div>
+    <div class="record-info">The Money Team (2017-Present)</div>
+  </article>
+  <article class="record-card">
+    <img src="logos/jason.png" alt="Jason Logo" class="team-logo" />
+    <h3>Longest Playoff Streak</h3>
+    <div class="record-stat" data-value="6">0</div>
+    <div class="record-info">Jason (2018-2023)</div>
+  </article>
+</section>
+
+<!-- PLAYOFF RECORDS -->
+<section id="playoff-records" class="tab-content" role="tabpanel" aria-labelledby="tab-playoff-records" tabindex="0" hidden>
+  <article class="record-card">
+    <img src="logos/sam.png" alt="Sam Logo" class="team-logo" />
+    <h3>Most Playoff Wins</h3>
+    <div class="record-stat" data-value="12">0</div>
+    <div class="record-info">Sam (2015-Present)</div>
+  </article>
+  <article class="record-card">
+    <img src="logos/ridge.png" alt="Ridge Logo" class="team-logo" />
+    <h3>Best Playoff Win %</h3>
+    <div class="record-stat" data-value="75.3">0</div>
+    <div class="record-info">Ridge (2016-Present)</div>
+  </article>
+</section>
+
+<!-- CHAMPIONSHIPS -->
+<section id="championships" class="tab-content" role="tabpanel" aria-labelledby="tab-championships" tabindex="0" hidden>
+  <article class="record-card">
+    <img src="logos/heather.png" alt="Heather Logo" class="team-logo" />
+    <h3>Total Titles</h3>
+    <div class="record-stat" data-value="3">0</div>
+    <div class="record-info">Heather (2017, 2020, 2022)</div>
+  </article>
+  <article class="record-card">
+    <img src="logos/chris.png" alt="Chris Logo" class="team-logo" />
+    <h3>Most Finals Appearances</h3>
+    <div class="record-stat" data-value="5">0</div>
+    <div class="record-info">Chris (2015-2023)</div>
+  </article>
+</section>
+
+<!-- POINTS & MOVES -->
+<section id="points-moves" class="tab-content" role="tabpanel" aria-labelledby="tab-points-moves" tabindex="0" hidden>
+  <article class="record-card">
+    <img src="logos/zach.png" alt="Zach Logo" class="team-logo" />
+    <h3>Most Points in a Single Game</h3>
+    <div class="record-stat" data-value="198.7">0</div>
+    <div class="record-info">Zach (Week 7, 2021)</div>
+  </article>
+  <article class="record-card">
+    <img src="logos/alston.png" alt="Alston Logo" class="team-logo" />
+    <h3>Most Moves in a Season</h3>
+    <div class="record-stat" data-value="86">0</div>
+    <div class="record-info">Alston (2022)</div>
+  </article>
+</section>
+
+<script>
+  // Animate numbers from 0 to target value on visible tab only
+  function animateNumbers(container) {
+    container.querySelectorAll('.record-stat').forEach(el => {
+      const target = parseFloat(el.dataset.value);
+      const isDecimal = target % 1 !== 0;
+      const duration = 3000; // animation duration ms
+      const steps = 90;
+      const increment = target / steps;
+      let current = 0;
+      let frame = 0;
+
+      function step() {
+        frame++;
+        current += increment;
+        if (frame >= steps) {
+          el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
+        } else {
+          el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+          requestAnimationFrame(step);
+        }
+      }
+
+      el.textContent = '0';
+      requestAnimationFrame(step);
+    });
+  }
+
+  // Show the selected tab, hide others, animate numbers on that tab
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-button');
+
+    tabs.forEach(tab => {
+      if (tab.id === tabId) {
+        tab.classList.add('active');
+        tab.removeAttribute('hidden');
+        tab.setAttribute('tabindex', '0');
+        animateNumbers(tab);
+      } else {
+        tab.classList.remove('active');
+        tab.setAttribute('hidden', '');
+        tab.setAttribute('tabindex', '-1');
+      }
+    });
+
+    buttons.forEach(btn => {
+      if (btn.dataset.tab === tabId) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        btn.focus();
+      } else {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      }
+    });
+  }
+
+  // Initialize tab switching events
+  document.querySelectorAll('.tab-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      showTab(btn.dataset.tab);
+    });
+  });
+
+  // Animate the default active tab on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const activeTab = document.querySelector('.tab-content.active');
+    if (activeTab) animateNumbers(activeTab);
+  });
+</script>
+
+</body>
+</html>

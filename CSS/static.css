@@ -2456,4 +2456,123 @@ canvas { margin-top: 30px; background: #ffffff; border-radius: 8px; }
   color: #116530;
 }
 
+/* Tabs container */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+/* Individual tab button */
+.tab-button {
+  background: #2F162C;
+  color: #eee;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  flex: 1 1 auto;
+  max-width: 200px;
+  text-align: center;
+}
+
+.tab-button:hover:not(.active) {
+  background: gold;
+}
+
+.tab-button.active {
+  background: gold;
+  color: #fff;
+  box-shadow: 0 0 10px #2F162C;
+}
+
+/* Tab content container */
+.tab-content {
+  display: none;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.tab-content.active {
+  display: flex;
+}
+
+/* Each record card */
+.record-cards {
+  background: #2F162C;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(47, 22, 44, 0.7);
+  flex: 1 1 300px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  max-width: 100%;
+}
+
+.record-cards:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 16px #0f9d58cc;
+}
+
+/* Team logos */
+.team-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid #0f9d58;
+  box-shadow: 0 0 7px #0f9d58aa;
+  background: #121212;
+}
+
+/* Record title */
+.record-cards h3 {
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+/* Animated stat */
+.record-stat {
+  font-weight: 900;
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Additional info */
+.record-info {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .record-cards {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .record-cards {
+    flex: 1 1 100%;
+  }
+}
+
 /*# sourceMappingURL=style.min.css.map */
