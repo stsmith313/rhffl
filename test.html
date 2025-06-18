@@ -1,370 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPT36ELWNJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-QPT36ELWNJ');
-    </script>
+    <meta charset="UTF-8" />
+    <title>RHFL Draft Order</title>
     <style>
-        /* Reset and base */
+        body {
+            background: #121212;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 2rem;
+        }
 
-h1 {
-  margin-bottom: 2rem;
-  font-weight: 700;
-}
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
+        ol {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: auto;
+        }
 
+        li {
+            display: flex;
+            align-items: center;
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-right: 1rem;
+        }
+
+        .team-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pick-number {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .team-name {
+            font-size: 1rem;
+            color: #ccc;
+        }
     </style>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="CSS/static.css">
-
-    <link type="text/css" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
-        integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w=="
-        crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="Logos/Trophy.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Logos/Trophy.png">
-    <link rel="manifest" href="/static/favicon/site.b9aa277fcfc3.webmanifest">
-    <link rel="mask-icon" href="Favicon/favicon.ico" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-
-    <title>RHFL | Records</title>
-
 </head>
 
 <body>
+    <h1>Round 1 Draft Order</h1>
+    <ol id="draftOrder">
+        <li>Loading...</li>
+    </ol>
 
-    <div class="preload-wrapper">
-        <div id="preload"></div>
-    </div>
-
-    <div class="content">
-
-        <div class='nav'>
-            <div class="top">
-                <a href="index"><img src="Logos/trophy.svg" class='nav-logo' alt="RHFL Main Logo"></a>
-
-                <div id="menu-toggle">
-                    <div id="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div id="cross">
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-
-                <ul>
-                    <li><a href="index">Home</a></li>
-                    <li><a href="hall-of-champions">Hall of Champions</a></li>
-                    <!--<li><a href="drafts">Drafts</a></li>-->
-                    <li><a href="teams">Teams</a></li>
-                    <li><a href="power-rankings">Power Rankings</a></li>
-                    <li><a href="records">Records</a></li>
-                </ul>
-
-            </div>
-        </div>
-
-
-        <div class="mobile-nav">
-            <a href="index"><img src="Logos/trophy.svg" class='nav-logo' alt="RHFL Main Logo"></a>
-            <ul>
-                <li><a href="index">Home</a></li>
-                <li><a href="hall-of-champions">Hall of Champions</a></li>
-                <!--<li><a href="drafts">Drafts</a></li>-->
-                <li><a href="teams">Teams</a></li>
-                <li><a href="power-rankings">Power Rankings</a></li>
-                <li><a href="records">Records</a></li>
-            </ul>
-        </div>
-
-
-
-
-        <h1>Records</h1>
-
-        <div class="tabs" role="tablist" aria-label="Fantasy football record categories">
-            <button class="tab-button active" data-tab="single-season" role="tab" aria-selected="true"
-                aria-controls="single-season" id="tab-single-season">Single-Season Records</button>
-            <button class="tab-button" data-tab="career-records" role="tab" aria-selected="false"
-                aria-controls="career-records" id="tab-career-records">Career Records</button>
-            <button class="tab-button" data-tab="playoff-records" role="tab" aria-selected="false"
-                aria-controls="playoff-records" id="tab-playoff-records">Playoff Records</button>
-            <button class="tab-button" data-tab="championships" role="tab" aria-selected="false"
-                aria-controls="championships" id="tab-championships">Championships</button>
-        </div>
-
-        <!-- SINGLE SEASON -->
-        <section id="single-season" class="tab-content active" role="tabpanel" aria-labelledby="tab-single-season"
-            tabindex="0">
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="The Money Team Logo" class="team-logo" />
-                <h3>Most Points in a Season</h3>
-                <div class="record-stat" data-value="2273.2">0</div>
-                <div class="record-info">The Money Team (2024)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/scott.png" alt="Moustache's Evil Empire Logo" class="team-logo" />
-                <h3>Most Points in a Week</h3>
-                <div class="record-stat" data-value="229.1">0</div>
-                <div class="record-info">Scott (Week 5, 2024)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/zach.png" alt="31-0 Logo" class="team-logo" />
-                <h3>Most Wins in a Season</h3>
-                <div class="record-stat" data-value="14">0</div>
-                <div class="record-info">Zach (2014)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/alston.png" alt="Alston Logo" class="team-logo" />
-                <h3>Best Season Win %</h3>
-                <div class="record-stat" data-value="92.3">0</div>
-                <div class="record-info">Zach (2014)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/scott.png" alt="Moustache's Evil Empire Logo" class="team-logo" />
-                <h3>Least Points in a Season</h3>
-                <div class="record-stat" data-value="1064.7">0</div>
-                <div class="record-info">Moustache's Evil Empire (2019)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/heather.png" alt="Team Henderson. Logo" class="team-logo" />
-                <h3>Least Points in a Week</h3>
-                <div class="record-stat" data-value="38.7">0</div>
-                <div class="record-info">Heather (Week 11, 2019)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/jay.png" alt="Jedi Knights Logo" class="team-logo" />
-                <h3>Highest Season OPR</h3>
-                <div class="record-stat" data-value="1.307">0</div>
-                <div class="record-info">Jay (2015)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/chris.png" alt="Rett/Luke's Papa Logo" class="team-logo" />
-                <h3>Lowest Season OPR</h3>
-                <div class="record-stat" data-value="0.635">0</div>
-                <div class="record-info">Chris (2022)</div>
-            </article>
-        </section>
-
-        <!-- CAREER RECORDS -->
-        <section id="career-records" class="tab-content" role="tabpanel" aria-labelledby="tab-career-records"
-            tabindex="0" hidden>
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="Garrett Logo" class="team-logo" />
-                <h3>Best Career Win %</h3>
-                <div class="record-stat" data-value="68.5">0</div>
-                <div class="record-info">Garrett (2017-Present)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/ridge.png" alt="The Heartbreak Kids Logo" class="team-logo" />
-                <h3>Most Wins</h3>
-                <div class="record-stat" data-value="109">0</div>
-                <div class="record-info">Ridge (2011-Present)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/zach.png" alt="31-0 Logo" class="team-logo" />
-                <h3>Longest Winning Streak</h3>
-                <div class="record-stat" data-value="13">0</div>
-                <div class="record-info">Zach (2014)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/chris.png" alt="Rett/Luke's Papa Logo" class="team-logo" />
-                <h3>Longest Losing Streak</h3>
-                <div class="record-stat" data-value="22">0</div>
-                <div class="record-info">Chris (2022-2023)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/chris.png" alt="Rett/Luke's Papa Logo" class="team-logo" />
-                <h3>Most Career Losses</h3>
-                <div class="record-stat" data-value="101">0</div>
-                <div class="record-info">Chris (2013-Present)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="The Money Team Logo" class="team-logo" />
-                <h3>Highest Career OPR</h3>
-                <div class="record-stat" data-value="1.227">0</div>
-                <div class="record-info">Garrett (2017-Present)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/brennon.png" alt="Anderson Booty Warriors Logo" class="team-logo" />
-                <h3>Lowest Career OPR</h3>
-                <div class="record-stat" data-value="0.742">0</div>
-                <div class="record-info">Brennon (2015)</div>
-            </article>
-        </section>
-
-        <!-- PLAYOFF RECORDS -->
-        <section id="playoff-records" class="tab-content" role="tabpanel" aria-labelledby="tab-playoff-records"
-            tabindex="0" hidden>
-            <article class="record-cards">
-                <img src="logos/ridge.png" alt="The Heartbreak Kids Logo" class="team-logo" />
-                <h3>Most Playoff Appearances</h3>
-                <div class="record-stat" data-value="10">0</div>
-                <div class="record-info">Ridge (2011-2014, 2016-2021, 2023)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="The Money Team Logo" class="team-logo" />
-                <h3>Most Playoff Wins</h3>
-                <div class="record-stat" data-value="12">0</div>
-                <div class="record-info">Garrett (2017-2024)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="The Money Team Logo" class="team-logo" />
-                <h3>Most Consecutive Playoff Appearances</h3>
-                <div class="record-stat" data-value="8">0</div>
-                <div class="record-info">Garrett (2017-2024)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="The Money Team Logo" class="team-logo" />
-                <h3>Most First-Round Byes</h3>
-                <div class="record-stat" data-value="4">0</div>
-                <div class="record-info">Garrett (2017-2024)</div>
-            </article>
-        </section>
-
-        <!-- CHAMPIONSHIPS -->
-        <section id="championships" class="tab-content" role="tabpanel" aria-labelledby="tab-championships" tabindex="0"
-            hidden>
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="The Money Team Logo" class="team-logo" />
-                <h3>Most Championship Wins</h3>
-                <div class="record-stat" data-value="4">0</div>
-                <div class="record-info">Garrett (2018, 2020, 2022, 2024)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="The Money Team Logo" class="team-logo" />
-                <h3>Most Championship Appearances</h3>
-                <div class="record-stat" data-value="5">0</div>
-                <div class="record-info">Garrett (2017-18, 2020, 2022, 2024)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/scott.png" alt="Moustache's Evil Empire Logo" class="team-logo" />
-                <h3>Most Consecutive Championship Games</h3>
-                <div class="record-stat" data-value="3">0</div>
-                <div class="record-info">Scott (2011-2013)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/scott.png" alt="Moustache's Evil Empire Logo" class="team-logo" />
-                <h3>Most Consecutive Championship Wins</h3>
-                <div class="record-stat" data-value="3">0</div>
-                <div class="record-info">Scott (2011-2013)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/jason.png" alt="Team Henderson Logo" class="team-logo" />
-                <h3>Most Championship Game Losses</h3>
-                <div class="record-stat" data-value="3">0</div>
-                <div class="record-info">Jason (2012-2013, 2015)</div>
-            </article>
-            <article class="record-cards">
-                <img src="logos/garrett.png" alt="The Money Team Logo" class="team-logo" />
-                <h3>Most Points in a Championship Game</h3>
-                <div class="record-stat" data-value="203.1">0</div>
-                <div class="record-info">Garrett (2024)</div>
-            </article>
-        </section>
-
-        <footer class="mt-3">
-        </footer>
-    </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script>
-        // Animate numbers from 0 to target value on visible tab only
-        function animateNumbers(container) {
-            container.querySelectorAll('.record-stat').forEach(el => {
-                const target = parseFloat(el.dataset.value);
-                const isDecimal = target % 1 !== 0;
-                const duration = 3000; // animation duration ms
-                const steps = 90;
-                const increment = target / steps;
-                let current = 0;
-                let frame = 0;
+        const leagueId = 467985;
+        const seasonId = 2025;
+        const logoPath = 'Logos/';
 
-                function step() {
-                    frame++;
-                    current += increment;
-                    if (frame >= steps) {
-                        el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
-                    } else {
-                        el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
-                        requestAnimationFrame(step);
-                    }
-                }
+        // Match ESPN teamId to local logo filename
+        const logoMap = {
+            1: 'ridge.png',
+            19: 'sam.png',
+            15: 'chris.png',
+            4: 'josiah.png',
+            3: 'kevin.png',
+            12: 'garrett.png',
+            20: 'joey.png',
+            16: 'krista.png',
+            10: 'chandler.png',
+            13: 'spencer.png',
+            5: 'scott.png',
+            18: 'gabi.png'
+        };
 
-                el.textContent = '0';
-                requestAnimationFrame(step);
-            });
+        const url = `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${seasonId}/segments/0/leagues/${leagueId}?view=mDraftDetail&view=mTeam`;
+
+        async function loadDraftOrder() {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                const draftPicks = data.draftDetail.picks
+                    .filter(p => p.roundId === 1)
+                    .sort((a, b) => a.roundPickNumber - b.roundPickNumber);
+
+                const teams = data.teams;
+
+                const teamMap = {};
+                teams.forEach(team => {
+                    teamMap[team.id] = {
+                        name: team.name || `Team ${team.id}`,
+                        logo: `${logoPath}${logoMap[team.id] || 'default.png'}`
+                    };
+                });
+
+                const ol = document.getElementById('draftOrder');
+                ol.innerHTML = '';
+
+                draftPicks.forEach(pick => {
+                    const team = teamMap[pick.teamId] || { name: 'TBD', logo: `${logoPath}default.png` };
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+            <img class="logo" src="${team.logo}" alt="${team.name} logo" />
+            <div class="team-info">
+              <span class="pick-number">Pick ${pick.roundPickNumber}</span>
+              <span class="team-name">${team.name}</span>
+            </div>
+          `;
+                    ol.appendChild(li);
+                });
+
+            } catch (err) {
+                console.error('Error:', err);
+                document.getElementById('draftOrder').innerHTML = '<li>Failed to load draft order.</li>';
+            }
         }
 
-        // Show the selected tab, hide others, animate numbers on that tab
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            const buttons = document.querySelectorAll('.tab-button');
-
-            tabs.forEach(tab => {
-                if (tab.id === tabId) {
-                    tab.classList.add('active');
-                    tab.removeAttribute('hidden');
-                    tab.setAttribute('tabindex', '0');
-                    animateNumbers(tab);
-                } else {
-                    tab.classList.remove('active');
-                    tab.setAttribute('hidden', '');
-                    tab.setAttribute('tabindex', '-1');
-                }
-            });
-
-            buttons.forEach(btn => {
-                if (btn.dataset.tab === tabId) {
-                    btn.classList.add('active');
-                    btn.setAttribute('aria-selected', 'true');
-                    btn.focus();
-                } else {
-                    btn.classList.remove('active');
-                    btn.setAttribute('aria-selected', 'false');
-                }
-            });
-        }
-
-        // Initialize tab switching events
-        document.querySelectorAll('.tab-button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                showTab(btn.dataset.tab);
-            });
-        });
-
-        // Animate the default active tab on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            const activeTab = document.querySelector('.tab-content.active');
-            if (activeTab) animateNumbers(activeTab);
-        });
+        loadDraftOrder();
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.js" type="text/javascript"></script>
-    <script src="JS/static.js"></script>
 </body>
 
 </html>
