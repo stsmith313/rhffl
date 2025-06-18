@@ -1573,8 +1573,8 @@ table tbody tr td:nth-child(2) {
 .team:hover,
 .team:active,
 .team:focus {
-    -webkit-box-shadow: #2F162C -1px 1px, #2F162C -2px 2px, #2F162C -3px 3px, #2F162C -4px 4px, #2F162C -5px 5px, #2F162C -6px 6px;
-    box-shadow: #2F162C -1px 1px, #2F162C -2px 2px, #2F162C -3px 3px, #2F162C -4px 4px, #2F162C -5px 5px, #2F162C -6px 6px;
+    -webkit-box-shadow: #ed4541 -1px 1px, #ed4541 -2px 2px, #ed4541 -3px 3px, #ed4541 -4px 4px, #ed4541 -5px 5px, #ed4541 -6px 6px;
+    box-shadow: #ed4541 -1px 1px, #ed4541 -2px 2px, #ed4541 -3px 3px, #ed4541 -4px 4px, #ed4541 -5px 5px, #ed4541 -6px 6px;
     -webkit-transform: translate3d(6px, -6px, 0);
     transform: translate3d(6px, -6px, 0)
 }
@@ -2294,7 +2294,6 @@ table tbody tr td:nth-child(2) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -2612,15 +2611,16 @@ ol {
     background: #F5F5F5;
     margin-bottom: 0.75rem;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(237, 69, 69, 0.2);
     color: #fff;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 #draftOrder li:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 170, 255, 0.4);
-    border: 1px solid #00aaff;
+    -webkit-box-shadow: #ed4541 -1px 1px, #ed4541 -2px 2px, #ed4541 -3px 3px, #ed4541 -4px 4px, #ed4541 -5px 5px, #ed4541 -6px 6px;
+    box-shadow: #ed4541 -1px 1px, #ed4541 -2px 2px, #ed4541 -3px 3px, #ed4541 -4px 4px, #ed4541 -5px 5px, #ed4541 -6px 6px;
+    -webkit-transform: translate3d(6px, -6px, 0);
+    transform: translate3d(6px, -6px, 0)
 }
 
 #draftOrder .logo {
