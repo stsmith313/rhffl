@@ -303,8 +303,11 @@ function renderTrendChart(matchups, team1, team2) {
           ticks: { color: '#000000' }
         },
         y: {
-          beginAtZero: true,
-          ticks: { color: '#000000' }
+          beginAtZero: false,
+          ticks: { color: '#000000',
+            suggestedMin: 60,
+            suggestedMax: 240
+           }
         }
       },
       onClick: (event, elements) => {
