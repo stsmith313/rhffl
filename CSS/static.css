@@ -2506,11 +2506,11 @@ canvas {
 }
 
 .tab-button:hover:not(.active) {
-    background: gold;
+    background: #ed4541;
 }
 
 .tab-button.active {
-    background: gold;
+    background: #ed4541;
     color: #fff;
     box-shadow: 0 0 10px #2F162C;
 }
@@ -2530,7 +2530,7 @@ canvas {
 
 /* Each record card */
 .record-cards {
-    background: #2F162C;
+    background: #ffffff;
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 0 10px rgba(47, 22, 44, 0.7);
@@ -2546,7 +2546,7 @@ canvas {
 
 .record-cards:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 16px #0f9d58cc;
+    box-shadow: 0 0 16px #2F162C;
 }
 
 /* Team logos */
@@ -2556,8 +2556,8 @@ canvas {
     object-fit: contain;
     margin-bottom: 0.75rem;
     border-radius: 50%;
-    border: 2px solid #0f9d58;
-    box-shadow: 0 0 7px #0f9d58aa;
+    border: 2px solid #2F162C;
+    box-shadow: 0 0 7px #2F162C;
     background: #ffffff;
 }
 
@@ -2566,14 +2566,14 @@ canvas {
     margin: 0 0 0.75rem 0;
     font-weight: 700;
     font-size: 1.25rem;
-    color: #ffffff;
+    color: #000000;
 }
 
 /* Animated stat */
 .record-stat {
     font-weight: 900;
     font-size: 3rem;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 0.75rem;
     font-variant-numeric: tabular-nums;
 }
@@ -2582,7 +2582,7 @@ canvas {
 .record-info {
     font-style: italic;
     font-size: 0.9rem;
-    color: #ffffff;
+    color: #000000;
 }
 
 /* Responsive adjustments */
