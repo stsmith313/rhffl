@@ -270,10 +270,10 @@
             <div class="tabs-container">
 
                 <!-- Tab Buttons -->
-                <div class="tabs-buttons">
-                    <button class="tab-btn active" data-tab="champions">Hall of Champions</button>
-                    <button class="tab-btn" data-tab="tournament">In-Season Tournament</button>
-                    <button class="tab-btn" data-tab="shame">Hall of Shame</button>
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="champions">Hall of Champions</button>
+                    <button class="tab-button" data-tab="tournament">In-Season Tournament</button>
+                    <button class="tab-button" data-tab="shame">Hall of Shame</button>
                 </div>
 
                 <!-- Tab Contents -->
@@ -527,21 +527,74 @@
     </div>
 
     <script>
-        const buttons = document.querySelectorAll('.tab-btn');
-        const tabs = document.querySelectorAll('.tab-content');
+        // Animate numbers from 0 to target value on visible tab only
+        function animateNumbers(container) {
+            container.querySelectorAll('.record-stat').forEach(el => {
+                const target = parseFloat(el.dataset.value);
+                const isDecimal = target % 1 !== 0;
+                const duration = 3000; // animation duration ms
+                const steps = 90;
+                const increment = target / steps;
+                let current = 0;
+                let frame = 0;
 
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const target = button.dataset.tab;
+                function step() {
+                    frame++;
+                    current += increment;
+                    if (frame >= steps) {
+                        el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
+                    } else {
+                        el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+                        requestAnimationFrame(step);
+                    }
+                }
 
-                // Remove active from all buttons & tabs
-                buttons.forEach(btn => btn.classList.remove('active'));
-                tabs.forEach(tab => tab.classList.remove('active'));
-
-                // Add active to clicked button & show target tab
-                button.classList.add('active');
-                document.getElementById(target).classList.add('active');
+                el.textContent = '0';
+                requestAnimationFrame(step);
             });
+        }
+
+        // Show the selected tab, hide others, animate numbers on that tab
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            tabs.forEach(tab => {
+                if (tab.id === tabId) {
+                    tab.classList.add('active');
+                    tab.removeAttribute('hidden');
+                    tab.setAttribute('tabindex', '0');
+                    animateNumbers(tab);
+                } else {
+                    tab.classList.remove('active');
+                    tab.setAttribute('hidden', '');
+                    tab.setAttribute('tabindex', '-1');
+                }
+            });
+
+            buttons.forEach(btn => {
+                if (btn.dataset.tab === tabId) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    btn.focus();
+                } else {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                }
+            });
+        }
+
+        // Initialize tab switching events
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                showTab(btn.dataset.tab);
+            });
+        });
+
+        // Animate the default active tab on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const activeTab = document.querySelector('.tab-content.active');
+            if (activeTab) animateNumbers(activeTab);
         });
     </script>
     </script>
