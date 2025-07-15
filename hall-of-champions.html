@@ -482,89 +482,89 @@
             </div>
 
             <script>
-    // Animate numbers from 0 to target value
-    function animateNumbers(container) {
-        container.querySelectorAll('.record-stat').forEach(el => {
-            const target = parseFloat(el.dataset.value);
-            const isDecimal = target % 1 !== 0;
-            const duration = 3000;
-            const steps = 90;
-            const increment = target / steps;
-            let current = 0;
-            let frame = 0;
+                // Animate numbers from 0 to target value
+                function animateNumbers(container) {
+                    container.querySelectorAll('.record-stat').forEach(el => {
+                        const target = parseFloat(el.dataset.value);
+                        const isDecimal = target % 1 !== 0;
+                        const duration = 3000;
+                        const steps = 90;
+                        const increment = target / steps;
+                        let current = 0;
+                        let frame = 0;
 
-            function step() {
-                frame++;
-                current += increment;
-                if (frame >= steps) {
-                    el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
-                } else {
-                    el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
-                    requestAnimationFrame(step);
+                        function step() {
+                            frame++;
+                            current += increment;
+                            if (frame >= steps) {
+                                el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
+                            } else {
+                                el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+                                requestAnimationFrame(step);
+                            }
+                        }
+
+                        el.textContent = '0';
+                        requestAnimationFrame(step);
+                    });
                 }
-            }
 
-            el.textContent = '0';
-            requestAnimationFrame(step);
-        });
-    }
+                function showTab(tabId) {
+                    const tabs = document.querySelectorAll('.tab-content');
+                    const buttons = document.querySelectorAll('.tab-button');
 
-    function showTab(tabId) {
-        const tabs = document.querySelectorAll('.tab-content');
-        const buttons = document.querySelectorAll('.tab-button');
+                    tabs.forEach(tab => {
+                        if (tab.id === tabId) {
+                            tab.classList.add('active');
+                            tab.removeAttribute('hidden');
+                            tab.setAttribute('tabindex', '0');
+                            animateNumbers(tab);
+                        } else {
+                            tab.classList.remove('active');
+                            tab.setAttribute('hidden', '');
+                            tab.setAttribute('tabindex', '-1');
+                        }
+                    });
 
-        tabs.forEach(tab => {
-            if (tab.id === tabId) {
-                tab.classList.add('active');
-                tab.removeAttribute('hidden');
-                tab.setAttribute('tabindex', '0');
-                animateNumbers(tab);
-            } else {
-                tab.classList.remove('active');
-                tab.setAttribute('hidden', '');
-                tab.setAttribute('tabindex', '-1');
-            }
-        });
+                    buttons.forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.tab === tabId);
+                        btn.setAttribute('aria-selected', btn.dataset.tab === tabId);
+                    });
+                }
 
-        buttons.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.tab === tabId);
-            btn.setAttribute('aria-selected', btn.dataset.tab === tabId);
-        });
-    }
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.addEventListener('click', () => showTab(btn.dataset.tab));
+                });
 
-    document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.addEventListener('click', () => showTab(btn.dataset.tab));
-    });
+                window.addEventListener('DOMContentLoaded', () => {
+                    const activeTab = document.querySelector('.tab-content.active');
+                    if (activeTab) animateNumbers(activeTab);
+                });
 
-    window.addEventListener('DOMContentLoaded', () => {
-        const activeTab = document.querySelector('.tab-content.active');
-        if (activeTab) animateNumbers(activeTab);
-    });
+                // Roster button logic
+                const positionMap = {
+                    1: 'QB', 2: 'RB', 3: 'WR', 4: 'TE', 5: 'K', 16: 'D/ST', 17: 'FLEX', 20: 'Bench'
+                };
 
-    // Roster button logic
-    const positionMap = {
-        1: 'QB', 2: 'RB', 3: 'WR', 4: 'TE', 5: 'K', 16: 'D/ST', 17: 'FLEX', 20: 'Bench'
-    };
+                const teamMap = {
+                    0: 'FA', 1: 'ATL', 2: 'BUF', 3: 'CHI', 4: 'CIN', 5: 'CLE', 6: 'DAL', 7: 'DEN', 8: 'DET',
+                    9: 'GB', 10: 'TEN', 11: 'IND', 12: 'KC', 13: 'LV', 14: 'LAR', 15: 'MIA', 16: 'MIN',
+                    17: 'NE', 18: 'NO', 19: 'NYG', 20: 'NYJ', 21: 'PHI', 22: 'ARI', 23: 'PIT', 24: 'LAC',
+                    25: 'SF', 26: 'SEA', 27: 'TB', 28: 'WAS', 29: 'CAR', 30: 'JAX', 33: 'BAL', 34: 'HOU'
+                };
 
-    const teamMap = {
-        0: 'FA', 1: 'ATL', 2: 'BUF', 3: 'CHI', 4: 'CIN', 5: 'CLE', 6: 'DAL', 7: 'DEN', 8: 'DET',
-        9: 'GB', 10: 'TEN', 11: 'IND', 12: 'KC', 13: 'LV', 14: 'LAR', 15: 'MIA', 16: 'MIN',
-        17: 'NE', 18: 'NO', 19: 'NYG', 20: 'NYJ', 21: 'PHI', 22: 'ARI', 23: 'PIT', 24: 'LAC',
-        25: 'SF', 26: 'SEA', 27: 'TB', 28: 'WAS', 29: 'CAR', 30: 'JAX', 33: 'BAL', 34: 'HOU'
-    };
+                async function loadRoster(year) {
+                    const container = document.getElementById(`roster-${year}`);
+                    if (container.innerHTML.trim() !== '') {
+                        container.hidden = !container.hidden;
+                        return;
+                    }
 
-    async function loadRoster(year) {
-        const container = document.getElementById(`roster-${year}`);
-        if (container.innerHTML.trim() !== '') {
-            container.hidden = !container.hidden;
-            return;
-        }
+                    try {
+                        const res = await fetch(`Champions/${year}.json`);
+                        const data = await res.json();
 
-        try {
-            const res = await fetch(`champions/${year}.json`);
-            const data = await res.json();
-
-            const html = `
+                        const html = `
   <strong>Championship Score:</strong> ${data.score}<br/><br/>
   <ul class="roster-list">
     ${data.roster.map(p => `
@@ -577,22 +577,22 @@
     `).join('')}
   </ul>
 `;
-            container.innerHTML = html;
-            container.hidden = false;
-        } catch (err) {
-            container.innerHTML = '<p>Error loading roster data.</p>';
-            container.hidden = false;
-            console.error(err);
-        }
-    }
+                        container.innerHTML = html;
+                        container.hidden = false;
+                    } catch (err) {
+                        container.innerHTML = '<p>Error loading roster data.</p>';
+                        container.hidden = false;
+                        console.error(err);
+                    }
+                }
 
-    document.querySelectorAll('.roster-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-            const year = button.dataset.year;
-            loadRoster(year);
-        });
-    });
-</script>
+                document.querySelectorAll('.roster-toggle').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const year = button.dataset.year;
+                        loadRoster(year);
+                    });
+                });
+            </script>
             </script>
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
