@@ -189,6 +189,73 @@
                 border-color: #ffd700;
             }
         }
+
+        .champ-roster {
+            background-color: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #1f2937;
+        }
+
+        .champ-roster ul {
+            padding-left: 20px;
+            margin-top: 8px;
+            list-style-type: disc;
+        }
+
+        .champ-roster li {
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .champ-roster strong {
+            color: #111827;
+        }
+
+        .roster-toggle {
+            margin-top: 8px;
+            padding: 5px 10px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .roster-toggle:hover {
+            background-color: #1e40af;
+        }
+
+        .roster-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .roster-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .player-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+            background-color: #e5e7eb;
+            border: 1px solid #d1d5db;
+        }
+
+        .player-info {
+            font-size: 18px;
+            color: #1f2937;
+        }
     </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -271,7 +338,7 @@
         <section class="hall-tabs-section">
             <div class="tabs-container">
 
-                
+
 
                 <!-- Tab Buttons -->
                 <div class="tabs">
@@ -280,207 +347,262 @@
                     <button class="tab-button" data-tab="shame">Hall of Shame</button>
                 </div>
 
-                 <!-- SINGLE SEASON -->
-        <section id="champions" class="tab-content active" role="tabpanel" aria-labelledby="tab-champions"
-            tabindex="0">
-            <article class="record-cards">
-                <img src="Logos/scott.png" alt="Moustache's Evil Empire Logo" class="record-logo" />
-                <h3>Moustache's Evil Empire</h3>
-                <div class="record-stat" data-value="2011">0</div>
-                <div class="record-info">Scott Thomas</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/scott.png" alt="Moustache's Evil Empire Logo" class="record-logo" />
-                <h3>Moustache's Evil Empire</h3>
-                <div class="record-stat" data-value="2012">0</div>
-                <div class="record-info">Scott Thomas</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/scott.png" alt="Moustache's Evil Empire Logo" class="record-logo" />
-                <h3>Moustache's Evil Empire</h3>
-                <div class="record-stat" data-value="2013">0</div>
-                <div class="record-info">Scott Thomas</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/matt.png" alt="Team from Chester Logo" class="record-logo" />
-                <h3>Team from Chester</h3>
-                <div class="record-stat" data-value="2014">0</div>
-                <div class="record-info">Matt Levaster</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/krista.png" alt="Wham Bam Thank You Cam Logo" class="record-logo" />
-                <h3>Wham Bam Thank You Cam</h3>
-                <div class="record-stat" data-value="2015">0</div>
-                <div class="record-info">Krista Sardo</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/jay.png" alt="We R Legion Logo" class="record-logo" />
-                <h3>We R Legion</h3>
-                <div class="record-stat" data-value="2016">0</div>
-                <div class="record-info">Jay Fischer</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/ridge.png" alt="The Heartbreak Kids Logo" class="record-logo" />
-                <h3>The Heartbreak Kids</h3>
-                <div class="record-stat" data-value="2017">0</div>
-                <div class="record-info">Ridge Thomas</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
-                <h3>The Money Team</h3>
-                <div class="record-stat" data-value="2018">0</div>
-                <div class="record-info">Garrett Jackson</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/sam.png" alt="The Long Bombers Logo" class="record-logo" />
-                <h3>The Long Bombers</h3>
-                <div class="record-stat" data-value="2019">0</div>
-                <div class="record-info">Sam Smith</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
-                <h3>The Money Team</h3>
-                <div class="record-stat" data-value="2020">0</div>
-                <div class="record-info">Garrett Jackson</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/skully.png" alt="Team Skully Logo" class="record-logo" />
-                <h3>Team Skully</h3>
-                <div class="record-stat" data-value="2021">0</div>
-                <div class="record-info">Skully Thomas</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
-                <h3>The Money Team</h3>
-                <div class="record-stat" data-value="2022">0</div>
-                <div class="record-info">Garrett Jackson</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/chandler.png" alt="The Cerebral Assassins Logo" class="record-logo" />
-                <h3>The Cerebral Assassins</h3>
-                <div class="record-stat" data-value="2023">0</div>
-                <div class="record-info">Chandler Beard</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
-                <h3>The Money Team</h3>
-                <div class="record-stat" data-value="2024">0</div>
-                <div class="record-info">Garrett Jackson</div>
-            </article>
-        </section>
+                <!-- SINGLE SEASON -->
+                <section id="champions" class="tab-content active" role="tabpanel" aria-labelledby="tab-champions"
+                    tabindex="0">
+                    <article class="record-cards">
+                        <img src="Logos/scott.png" alt="Moustache's Evil Empire Logo" class="record-logo" />
+                        <h3>Moustache's Evil Empire</h3>
+                        <div class="record-stat" data-value="2011">0</div>
+                        <div class="record-info">Scott Thomas</div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/scott.png" alt="Moustache's Evil Empire Logo" class="record-logo" />
+                        <h3>Moustache's Evil Empire</h3>
+                        <div class="record-stat" data-value="2012">0</div>
+                        <div class="record-info">Scott Thomas</div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/scott.png" alt="Moustache's Evil Empire Logo" class="record-logo" />
+                        <h3>Moustache's Evil Empire</h3>
+                        <div class="record-stat" data-value="2013">0</div>
+                        <div class="record-info">Scott Thomas</div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/matt.png" alt="Team from Chester Logo" class="record-logo" />
+                        <h3>Team from Chester</h3>
+                        <div class="record-stat" data-value="2014">0</div>
+                        <div class="record-info">Matt Levaster</div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/krista.png" alt="Wham Bam Thank You Cam Logo" class="record-logo" />
+                        <h3>Wham Bam Thank You Cam</h3>
+                        <div class="record-stat" data-value="2015">0</div>
+                        <div class="record-info">Krista Sardo</div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/jay.png" alt="We R Legion Logo" class="record-logo" />
+                        <h3>We R Legion</h3>
+                        <div class="record-stat" data-value="2016">0</div>
+                        <div class="record-info">Jay Fischer</div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/ridge.png" alt="The Heartbreak Kids Logo" class="record-logo" />
+                        <h3>The Heartbreak Kids</h3>
+                        <div class="record-stat" data-value="2017">0</div>
+                        <div class="record-info">Ridge Thomas</div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
+                        <h3>The Money Team</h3>
+                        <div class="record-stat" data-value="2018">0</div>
+                        <div class="record-info">Garrett Jackson</div>
+                        <button class="roster-toggle" data-year="2018">View Roster</button>
+                        <div class="champ-roster" id="roster-2018" hidden></div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/sam.png" alt="The Long Bombers Logo" class="record-logo" />
+                        <h3>The Long Bombers</h3>
+                        <div class="record-stat" data-value="2019">0</div>
+                        <div class="record-info">Sam Smith</div>
+                        <button class="roster-toggle" data-year="2019">View Roster</button>
+                        <div class="champ-roster" id="roster-2019" hidden></div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
+                        <h3>The Money Team</h3>
+                        <div class="record-stat" data-value="2020">0</div>
+                        <div class="record-info">Garrett Jackson</div>
+                        <button class="roster-toggle" data-year="2020">View Roster</button>
+                        <div class="champ-roster" id="roster-2020" hidden></div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/skully.png" alt="Team Skully Logo" class="record-logo" />
+                        <h3>Team Skully</h3>
+                        <div class="record-stat" data-value="2021">0</div>
+                        <div class="record-info">Skully Thomas</div>
+                        <button class="roster-toggle" data-year="2021">View Roster</button>
+                        <div class="champ-roster" id="roster-2021" hidden></div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
+                        <h3>The Money Team</h3>
+                        <div class="record-stat" data-value="2022">0</div>
+                        <div class="record-info">Garrett Jackson</div>
+                        <button class="roster-toggle" data-year="2022">View Roster</button>
+                        <div class="champ-roster" id="roster-2022" hidden></div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/chandler.png" alt="The Cerebral Assassins Logo" class="record-logo" />
+                        <h3>The Cerebral Assassins</h3>
+                        <div class="record-stat" data-value="2023">0</div>
+                        <div class="record-info">Chandler Beard</div>
+                        <button class="roster-toggle" data-year="2023">View Roster</button>
+                        <div class="champ-roster" id="roster-2023" hidden></div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
+                        <h3>The Money Team</h3>
+                        <div class="record-stat" data-value="2024">0</div>
+                        <div class="record-info">Garrett Jackson</div>
+                        <button class="roster-toggle" data-year="2024">View Roster</button>
+                        <div class="champ-roster" id="roster-2024" hidden></div>
+                    </article>
+                </section>
 
-        <!-- CAREER RECORDS -->
-        <section id="tournament" class="tab-content" role="tabpanel" aria-labelledby="tab-tournament"
-            tabindex="0" hidden>
-            <article class="record-cards">
-                <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
-                <h3>The Money Team</h3>
-                <div class="record-stat" data-value="2023">0</div>
-                <div class="record-info">Garrett Jackson</div>
-            </article>
-            <article class="record-cards">
-                <img src="Logos/chandler.png" alt="The Cerebral Assassins Logo" class="record-logo" />
-                <h3>The Cerebral Assassins</h3>
-                <div class="record-stat" data-value="2024">0</div>
-                <div class="record-info">Chandler Beard</div>
-            </article>
-        </section>
+                <!-- CAREER RECORDS -->
+                <section id="tournament" class="tab-content" role="tabpanel" aria-labelledby="tab-tournament"
+                    tabindex="0" hidden>
+                    <article class="record-cards">
+                        <img src="Logos/garrett.png" alt="The Money Team Logo" class="record-logo" />
+                        <h3>The Money Team</h3>
+                        <div class="record-stat" data-value="2023">0</div>
+                        <div class="record-info">Garrett Jackson</div>
+                    </article>
+                    <article class="record-cards">
+                        <img src="Logos/chandler.png" alt="The Cerebral Assassins Logo" class="record-logo" />
+                        <h3>The Cerebral Assassins</h3>
+                        <div class="record-stat" data-value="2024">0</div>
+                        <div class="record-info">Chandler Beard</div>
+                    </article>
+                </section>
 
-        <!-- CHAMPIONSHIPS -->
-        <section id="shame" class="tab-content" role="tabpanel" aria-labelledby="tab-shame" tabindex="0"
-            hidden>
-            <article class="record-cards">
-                <img src="Logos/chris.png" alt="Rett/Luke's Papa Logo" class="record-logo" />
-                <h3>Rett/Luke's Papa</h3>
-                <div class="record-stat" data-value="2022">0</div>
-                <div class="record-info">Chris Beard</div>
-            </article>
-        </section>
+                <!-- CHAMPIONSHIPS -->
+                <section id="shame" class="tab-content" role="tabpanel" aria-labelledby="tab-shame" tabindex="0" hidden>
+                    <article class="record-cards">
+                        <img src="Logos/chris.png" alt="Rett/Luke's Papa Logo" class="record-logo" />
+                        <h3>Rett/Luke's Papa</h3>
+                        <div class="record-stat" data-value="2022">0</div>
+                        <div class="record-info">Chris Beard</div>
+                    </article>
+                </section>
 
-        <footer class="mt-3">
-        </footer>
-    </div>
+                <footer class="mt-3">
+                </footer>
+            </div>
 
-    <script>
-        // Animate numbers from 0 to target value on visible tab only
-        function animateNumbers(container) {
-            container.querySelectorAll('.record-stat').forEach(el => {
-                const target = parseFloat(el.dataset.value);
-                const isDecimal = target % 1 !== 0;
-                const duration = 3000; // animation duration ms
-                const steps = 90;
-                const increment = target / steps;
-                let current = 0;
-                let frame = 0;
+            <script>
+                // Animate numbers from 0 to target value
+                function animateNumbers(container) {
+                    container.querySelectorAll('.record-stat').forEach(el => {
+                        const target = parseFloat(el.dataset.value);
+                        const isDecimal = target % 1 !== 0;
+                        const duration = 3000;
+                        const steps = 90;
+                        const increment = target / steps;
+                        let current = 0;
+                        let frame = 0;
 
-                function step() {
-                    frame++;
-                    current += increment;
-                    if (frame >= steps) {
-                        el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
-                    } else {
-                        el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+                        function step() {
+                            frame++;
+                            current += increment;
+                            if (frame >= steps) {
+                                el.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
+                            } else {
+                                el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+                                requestAnimationFrame(step);
+                            }
+                        }
+
+                        el.textContent = '0';
                         requestAnimationFrame(step);
+                    });
+                }
+
+                function showTab(tabId) {
+                    const tabs = document.querySelectorAll('.tab-content');
+                    const buttons = document.querySelectorAll('.tab-button');
+
+                    tabs.forEach(tab => {
+                        if (tab.id === tabId) {
+                            tab.classList.add('active');
+                            tab.removeAttribute('hidden');
+                            tab.setAttribute('tabindex', '0');
+                            animateNumbers(tab);
+                        } else {
+                            tab.classList.remove('active');
+                            tab.setAttribute('hidden', '');
+                            tab.setAttribute('tabindex', '-1');
+                        }
+                    });
+
+                    buttons.forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.tab === tabId);
+                        btn.setAttribute('aria-selected', btn.dataset.tab === tabId);
+                    });
+                }
+
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.addEventListener('click', () => showTab(btn.dataset.tab));
+                });
+
+                window.addEventListener('DOMContentLoaded', () => {
+                    const activeTab = document.querySelector('.tab-content.active');
+                    if (activeTab) animateNumbers(activeTab);
+                });
+
+                // Roster button logic
+                const positionMap = {
+                    1: 'QB', 2: 'RB', 3: 'WR', 4: 'TE', 5: 'K', 16: 'D/ST', 17: 'FLEX', 20: 'Bench'
+                };
+
+                const teamMap = {
+                    0: 'FA', 1: 'ATL', 2: 'BUF', 3: 'CHI', 4: 'CIN', 5: 'CLE', 6: 'DAL', 7: 'DEN', 8: 'DET',
+                    9: 'GB', 10: 'TEN', 11: 'IND', 12: 'KC', 13: 'LV', 14: 'LAR', 15: 'MIA', 16: 'MIN',
+                    17: 'NE', 18: 'NO', 19: 'NYG', 20: 'NYJ', 21: 'PHI', 22: 'ARI', 23: 'PIT', 24: 'LAC',
+                    25: 'SF', 26: 'SEA', 27: 'TB', 28: 'WAS', 29: 'CAR', 30: 'JAX', 33: 'BAL', 34: 'HOU'
+                };
+
+                async function loadRoster(year) {
+                    const container = document.getElementById(`roster-${year}`);
+                    if (container.innerHTML.trim() !== '') {
+                        container.hidden = !container.hidden;
+                        return;
+                    }
+
+                    try {
+                        const res = await fetch(`champions/${year}.json`);
+                        const data = await res.json();
+
+                        const html = `
+  <strong>Championship Score:</strong> ${data.score}<br/><br/>
+  <ul class="roster-list">
+    ${data.roster.map(p => `
+      <li>
+        <img src="https://a.espncdn.com/i/headshots/nfl/players/full/${p.id}.png" alt="${p.name}" class="player-pic">
+        <div class="player-info">
+          <strong>${p.slot}</strong>: ${p.name} – ${teamMap[p.team] || 'N/A'} (${positionMap[p.position] || 'N/A'})
+        </div>
+      </li>
+    `).join('')}
+  </ul>
+`;
+                        container.innerHTML = html;
+                        container.hidden = false;
+                    } catch (err) {
+                        container.innerHTML = '<p>Error loading roster data.</p>';
+                        container.hidden = false;
+                        console.error(err);
                     }
                 }
 
-                el.textContent = '0';
-                requestAnimationFrame(step);
-            });
-        }
-
-        // Show the selected tab, hide others, animate numbers on that tab
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            const buttons = document.querySelectorAll('.tab-button');
-
-            tabs.forEach(tab => {
-                if (tab.id === tabId) {
-                    tab.classList.add('active');
-                    tab.removeAttribute('hidden');
-                    tab.setAttribute('tabindex', '0');
-                    animateNumbers(tab);
-                } else {
-                    tab.classList.remove('active');
-                    tab.setAttribute('hidden', '');
-                    tab.setAttribute('tabindex', '-1');
-                }
-            });
-
-            buttons.forEach(btn => {
-                if (btn.dataset.tab === tabId) {
-                    btn.classList.add('active');
-                    btn.setAttribute('aria-selected', 'true');
-                    btn.focus();
-                } else {
-                    btn.classList.remove('active');
-                    btn.setAttribute('aria-selected', 'false');
-                }
-            });
-        }
-
-        // Initialize tab switching events
-        document.querySelectorAll('.tab-button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                showTab(btn.dataset.tab);
-            });
-        });
-
-        // Animate the default active tab on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            const activeTab = document.querySelector('.tab-content.active');
-            if (activeTab) animateNumbers(activeTab);
-        });
-    </script>
-    </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.js" type="text/javascript"></script>
-    <script src="JS/static.js"></script>
+                document.querySelectorAll('.roster-toggle').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const year = button.dataset.year;
+                        loadRoster(year);
+                    });
+                });
+            </script>
+            </script>
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.5.1.js"
+                integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.js"
+                type="text/javascript"></script>
+            <script src="JS/static.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,21 @@
+{
+    "teamName": "The Money Team",
+    "owner": "Sam Smith",
+    "score": 142.1,
+    "roster": [
+        { "name": "Kyler Murray", "team": 22, "position": 1, "slot": "QB", "id": 3917315 },
+        { "name": "Chris Carson", "team": 26, "position": 17, "slot": "RB", "id": 3919596 },
+        { "name": "Wayne Gallman", "team": 19, "position": 2, "slot": "RB", "id": 3045127 },
+        { "name": "Davante Adams", "team": 9, "position": 3, "slot": "WR", "id": 16800 },
+        { "name": "Russell Gage", "team": 1, "position": 3, "slot": "WR", "id": 3115378 },
+        { "name": "Dallas Goedert", "team": 21, "position": 4, "slot": "TE", "id": 3121023 },
+        { "name": "Tim Patrick", "team": 7, "position": 17, "slot": "WR", "id": 3134353 },
+        { "name": "Josh Allen", "team": 2, "position": 1, "slot": "QB", "id": 3918298 },
+        { "name": "Rams D/ST", "team": 14, "position": 16, "slot": "D/ST", "id": -16014 },
+        { "name": "Rodrigo Blankenship", "team": 11, "position": 5, "slot": "K", "id": 3915165 },
+        { "name": "Damien Harris", "team": 17, "position": 20, "slot": "RB", "id": 3925347 },
+        { "name": "Terry McLaurin", "team": 28, "position": 20, "slot": "WR", "id": 3121422 },
+        { "name": "Devonta Freeman", "team": 2, "position": 20, "slot": "RB", "id": 16944 },
+        { "name": "Eric Ebron", "team": 23, "position": 20, "slot": "TE", "id": 16732 }
+    ]
+}
