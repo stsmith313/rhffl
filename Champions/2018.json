@@ -1,0 +1,21 @@
+{
+    "teamName": "The Money Team",
+    "owner": "Garrett Jackson",
+    "score": 162.2,
+    "roster": [
+        { "name": "Josh Allen", "team": 2, "position": 1, "slot": "QB", "id": 16799 },
+        { "name": "Chris Carson", "team": 26, "position": 2, "slot": "RB", "id": 3919596 },
+        { "name": "C.J. Anderson", "team": 14, "position": 2, "slot": "RB", "id": 16040 },
+        { "name": "Tyreek Hill", "team": 12, "position": 3, "slot": "WR", "id": 3116406 },
+        { "name": "Amari Cooper", "team": 6, "position": 3, "slot": "WR", "id": 2976499 },
+        { "name": "George Kittle", "team": 25, "position": 4, "slot": "TE", "id": 3040151 },
+        { "name": "Sony Michel", "team": 17, "position": 17, "slot": "RB", "id": 3128721 },
+        { "name": "Jamaal Williams", "team": 9, "position": 17, "slot": "RB", "id": 2980453},
+        { "name": "Cowboys D/ST", "team": 6, "position": 16, "slot": "D/ST", "id": -16006 },
+        { "name": "Harrison Butker", "team": 12, "position": 5, "slot": "K", "id": 3055899 },
+        { "name": "Todd Gurley II", "team": 14, "position": 20, "slot": "RB", "id": 2977644 },
+        { "name": "Allen Robinson", "team": 3, "position": 20, "slot": "RB", "id": 16799 },
+        { "name": "Corey Davis", "team": 10, "position": 20, "slot": "D/ST", "id": 3042778 },
+        { "name": "Jameis Winston", "team": 27, "position": 20, "slot": "K", "id": 2969939 }
+    ]
+}
