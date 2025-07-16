@@ -1,0 +1,22 @@
+{
+    "teamName": "The Money Team",
+    "owner": "Garrett Jackson",
+    "score": 125.1,
+    "roster": [
+        { "name": "Justin Fields", "team": 3, "position": 1, "slot": "QB", "id": 4362887 },
+        { "name": "Joe Mixon", "team": 4, "position": 17, "slot": "RB", "id": 3116385 },
+        { "name": "Kenneth Walker III", "team": 26, "position": 2, "slot": "RB", "id": 4567048 },
+        { "name": "CeeDee Lamb", "team": 6, "position": 3, "slot": "WR", "id": 4241389 },
+        { "name": "Amon-Ra St. Brown", "team": 8, "position": 3, "slot": "WR", "id": 4374302 },
+        { "name": "George Kittle", "team": 25, "position": 4, "slot": "TE", "id": 3040151 },
+        { "name": "Jerry Jeudy", "team": 7, "position": 6, "slot": "WR", "id": 4241463 },
+        { "name": "Dak Prescott", "team": 6, "position": 6, "slot": "QB", "id": 2577417 },
+        { "name": "Giants D/ST", "team": 19, "position": 16, "slot": "D/ST", "id": -16019 },
+        { "name": "Brett Maher", "team": 6, "position": 5, "slot": "K", "id": 16486 },
+        { "name": "Russell Wilson", "team": 7, "position": 20, "slot": "QB", "id": 14881 },
+        { "name": "Rachaad White", "team": 27, "position": 20, "slot": "RB", "id": 4697815 },
+        { "name": "Patriots D/ST", "team": 17, "position": 20, "slot": "D/ST", "id": -16017 },
+        { "name": "J.K. Dobbins", "team": 33, "position": 20, "slot": "RB", "id": 4241985 },
+        { "name": "Zack Moss", "team": 11, "position": 20, "slot": "RB", "id": 4035676 }
+    ]
+}

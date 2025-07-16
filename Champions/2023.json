@@ -1,0 +1,22 @@
+{
+    "teamName": "The Cerebral Assassins",
+    "owner": "Chandler Beard",
+    "score": 183.9,
+    "roster": [
+        { "name": "Jalen Hurts", "team": 21, "position": 1, "slot": "QB", "id": 4040715 },
+        { "name": "Jahmyr Gibbs", "team": 8, "position": 17, "slot": "RB", "id": 4429795 },
+        { "name": "Breece Hall", "team": 20, "position": 2, "slot": "RB", "id": 4427366 },
+        { "name": "A.J. Brown", "team": 21, "position": 3, "slot": "WR", "id": 4047646 },
+        { "name": "DJ Moore", "team": 3, "position": 3, "slot": "WR", "id": 3915416 },
+        { "name": "Gerald Everett", "team": 3, "position": 4, "slot": "TE", "id": 3918639 },
+        { "name": "Davante Adams", "team": 13, "position": 6, "slot": "WR", "id": 16800 },
+        { "name": "Jake Browning", "team": 4, "position": 6, "slot": "QB", "id": 3886812 },
+        { "name": "Jets D/ST", "team": 20, "position": 16, "slot": "D/ST", "id": -16020 },
+        { "name": "Brandon Aubrey", "team": 6, "position": 5, "slot": "K", "id": 3953687 },
+        { "name": "Darren Waller", "team": 19, "position": 20, "slot": "TE", "id": 2576925 },
+        { "name": "Zack Moss", "team": 11, "position": 20, "slot": "RB", "id": 4035676 },
+        { "name": "Will Levis", "team": 10, "position": 20, "slot": "QB", "id": 4361418 },
+        { "name": "Noah Brown", "team": 34, "position": 20, "slot": "WR", "id": 3121409 },
+        { "name": "Kyle Pitts", "team": 1, "position": 20, "slot": "TE", "id": 4360248 }
+    ]
+}
