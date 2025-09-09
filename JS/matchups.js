@@ -110,9 +110,9 @@ async function fetchMatchups(leagueId, seasonId, week) {
           </div>
         </div>
         <div class="score">
-          ${awayScore} (${awayProj})<br>
+          ${awayScore} <br>
           vs<br>
-          ${homeScore} (${homeProj})
+          ${homeScore} <br>
         </div>
         <div class="team ${homeClass}">
           <img class="team-logo" src="${homeLogo}" alt="${homeName}" />
