@@ -24,7 +24,7 @@ async function getCurrentWeek() {
       `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${SEASON_ID}/segments/0/leagues/${LEAGUE_ID}`
     );
     const data = await res.json();
-    return data.status?.currentMatchupPeriodId || 6;
+    return data.status?.currentMatchupPeriodId || 7;
   } catch (error) {
     console.error("Error fetching current week:", error);
     return 1;
