@@ -1,4 +1,4 @@
-const LEAGUE_ID = "467985"; // Replace with your actual league ID
+const LEAGUE_ID = "467985";
 const SEASON_ID = 2025;
 const REFRESH_INTERVAL = 60 * 1000; // 1 minute
 
@@ -15,24 +15,15 @@ const LOCAL_LOGOS = {
   20: "Logos/joey.png",
   19: "Logos/sam.png",
   15: "Logos/chris.png",
-  // Add all your teamId -> logo paths here
 };
 
-async function getCurrentWeek() {
-  try {
-    const res = await fetch(
-      `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${SEASON_ID}/segments/0/leagues/${LEAGUE_ID}`
-    );
-    const data = await res.json();
-    return data.status?.currentMatchupPeriodId || 8;
-  } catch (error) {
-    console.error("Error fetching current week:", error);
-    return 1;
-  }
-}
+let currentWeek = 8; // <-- Force starting week here
 
+// --- Fetch and render matchups ---
 async function fetchMatchups(leagueId, seasonId, week) {
   const url = `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${seasonId}/segments/0/leagues/${leagueId}?view=mMatchup&view=mTeam&scoringPeriodId=${week}`;
+  const container = document.getElementById("matchups");
+  container.classList.add("fade-out");
 
   try {
     const response = await fetch(url);
@@ -42,14 +33,16 @@ async function fetchMatchups(leagueId, seasonId, week) {
     const matchups = data.schedule.filter((m) => m.matchupPeriodId === week);
     const teams = data.teams;
 
+    await new Promise((resolve) => setTimeout(resolve, 30)); // fade delay
+
     // Update week label
     const weekLabelEl = document.getElementById("week-label");
     if (weekLabelEl) weekLabelEl.innerText = `Week ${week}`;
 
-    // Clear container
-    const container = document.getElementById("matchups");
+    // Clear old matchups
     container.innerHTML = "";
 
+    // Build matchup cards
     matchups.forEach((matchup) => {
       const home = matchup.home;
       const away = matchup.away;
@@ -67,7 +60,6 @@ async function fetchMatchups(leagueId, seasonId, week) {
         awayTeam?.record?.overall?.losses ?? 0
       }`;
 
-      // ✅ Correct live scores + projections
       const homeScore = (
         home.rosterForCurrentScoringPeriod?.appliedStatTotal ?? 0
       ).toFixed(2);
@@ -75,19 +67,9 @@ async function fetchMatchups(leagueId, seasonId, week) {
         away.rosterForCurrentScoringPeriod?.appliedStatTotal ?? 0
       ).toFixed(2);
 
-      const homeProj =
-        home.rosterForCurrentScoringPeriod?.appliedStatProjectedTotal?.toFixed(
-          2
-        ) ?? "-";
-      const awayProj =
-        away.rosterForCurrentScoringPeriod?.appliedStatProjectedTotal?.toFixed(
-          2
-        ) ?? "-";
-
       const homeLogo = LOCAL_LOGOS[home.teamId] || homeTeam?.logo;
       const awayLogo = LOCAL_LOGOS[away.teamId] || awayTeam?.logo;
 
-      // Winner/loser classes
       let homeClass = "tie";
       let awayClass = "tie";
       if (+homeScore > +awayScore) {
@@ -98,7 +80,6 @@ async function fetchMatchups(leagueId, seasonId, week) {
         awayClass = "winner";
       }
 
-      // Build matchup card
       const matchupEl = document.createElement("div");
       matchupEl.className = "matchup fade-up";
       matchupEl.innerHTML = `
@@ -110,9 +91,7 @@ async function fetchMatchups(leagueId, seasonId, week) {
           </div>
         </div>
         <div class="score">
-          ${awayScore} <br>
-          vs<br>
-          ${homeScore} <br>
+          ${awayScore} <br>vs<br> ${homeScore} <br>
         </div>
         <div class="team ${homeClass}">
           <img class="team-logo" src="${homeLogo}" alt="${homeName}" />
@@ -122,22 +101,37 @@ async function fetchMatchups(leagueId, seasonId, week) {
           </div>
         </div>
       `;
-
       container.appendChild(matchupEl);
     });
-  } catch (error) {
-    console.error("Error fetching matchups:", error);
-    const container = document.getElementById("matchups");
-    if (container) container.innerText = "Error loading matchups.";
+
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+    setTimeout(() => container.classList.remove("fade-in"), 300);
+  } catch (err) {
+    console.error("Error fetching matchups:", err);
+    container.innerText = "Error loading matchups.";
+    container.classList.remove("fade-out");
   }
 }
 
-async function loadAndRefreshMatchups() {
-  const week = await getCurrentWeek();
-  await fetchMatchups(LEAGUE_ID, SEASON_ID, week);
+// --- Load matchups for current week ---
+async function loadMatchups() {
+  await fetchMatchups(LEAGUE_ID, SEASON_ID, currentWeek);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadAndRefreshMatchups();
-  setInterval(loadAndRefreshMatchups, REFRESH_INTERVAL); // auto-refresh
+// --- Change week via arrows ---
+async function changeWeek(delta) {
+  currentWeek += delta;
+  if (currentWeek < 1) currentWeek = 1;
+  if (currentWeek > 14) currentWeek = 14;
+  await loadMatchups();
+}
+
+// --- Initialize ---
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadMatchups();                 // Load forced week
+  setInterval(loadMatchups, REFRESH_INTERVAL); // Auto-refresh
+
+  document.getElementById("prev-week").addEventListener("click", () => changeWeek(-1));
+  document.getElementById("next-week").addEventListener("click", () => changeWeek(1));
 });

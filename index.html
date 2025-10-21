@@ -13,6 +13,36 @@
         gtag('js', new Date());
         gtag('config', 'G-QPT36ELWNJ');
     </script>
+    <style>
+        /* Ensure the week-controls header is centered properly */
+#week-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: ##FFD90E;
+}
+
+.week-btn {
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 8px 16px;
+}
+
+.week-btn:hover {
+  transform: scale(1.2);
+  color: ##FFD90E;
+}
+
+
+    </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -168,10 +198,16 @@
     </div>
 
     <section>
-        <div class="matchup-wrapper">
-            <h2>Weekly Matchups</h2>
-            <div id="matchups">Loading matchups...</div>
-        </div>
+       <div class="matchup-wrapper">
+        <h2>Weekly Matchups</h2>
+       <div id="week-controls">
+  <button id="prev-week" class="week-btn">←</button>
+  <span id="week-label">Week ?</span>
+  <button id="next-week" class="week-btn">→</button>
+</div>
+
+<div id="matchups"></div></div>
+
 
         <!--<div class="left-side">
             <h2>Draft Order</h2>
