@@ -17,7 +17,7 @@ const LOCAL_LOGOS = {
   15: "Logos/chris.png",
 };
 
-let currentWeek = 12; // <-- Force starting week here
+let currentWeek = 13; // <-- Force starting week here
 
 // --- Fetch and render matchups ---
 async function fetchMatchups(leagueId, seasonId, week) {
@@ -123,7 +123,7 @@ async function loadMatchups() {
 async function changeWeek(delta) {
   currentWeek += delta;
   if (currentWeek < 1) currentWeek = 1;
-  if (currentWeek > 14) currentWeek = 14;
+  if (currentWeek > 14) currentWeek = 17;
   await loadMatchups();
 }
 
