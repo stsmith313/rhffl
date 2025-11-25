@@ -123,7 +123,7 @@ async function loadMatchups() {
 async function changeWeek(delta) {
   currentWeek += delta;
   if (currentWeek < 1) currentWeek = 1;
-  if (currentWeek > 14) currentWeek = 17;
+  if (currentWeek > 17) currentWeek = 17;
   await loadMatchups();
 }
 
