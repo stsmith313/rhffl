@@ -17,7 +17,7 @@ const LOCAL_LOGOS = {
   15: "Logos/chris.png",
 };
 
-let currentWeek = 15; // <-- Force starting week here
+let currentWeek = 17; // <-- Force starting week here
 
 // --- Fetch and render matchups ---
 async function fetchMatchups(leagueId, seasonId, week) {
