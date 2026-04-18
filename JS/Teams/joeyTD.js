@@ -1,6 +1,6 @@
 async function fetchTeamData() {
     const leagueId = '467985';
-    const seasonId = '2025';
+    const seasonId = '2026';
     const teamId = 20;
     const url = `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${seasonId}/segments/0/leagues/${leagueId}?view=mSettings&view=mTeam&view=modular&view=mNav`;
 

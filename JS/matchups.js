@@ -1,5 +1,5 @@
 const LEAGUE_ID = "467985";
-const SEASON_ID = 2025;
+const SEASON_ID = 2026;
 const REFRESH_INTERVAL = 60 * 1000; // 1 minute
 
 const LOCAL_LOGOS = {
@@ -17,7 +17,7 @@ const LOCAL_LOGOS = {
   15: "Logos/chris.png",
 };
 
-let currentWeek = 17; // <-- Force starting week here
+let currentWeek = 1; // <-- Force starting week here
 
 // --- Fetch and render matchups ---
 async function fetchMatchups(leagueId, seasonId, week) {
